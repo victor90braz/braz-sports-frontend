@@ -1,12 +1,7 @@
-import NavBar from "../../components/NavBar/NavBar";
 import HomePageStyled from "./HomePageStyled";
 
 const HomePage = () => {
-  return (
-    <HomePageStyled>
-      <NavBar />
-    </HomePageStyled>
-  );
+  return <HomePageStyled></HomePageStyled>;
 };
 
 export default HomePage;

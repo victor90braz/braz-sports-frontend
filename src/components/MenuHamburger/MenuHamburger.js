@@ -10,7 +10,7 @@ const MenuHamburger = () => {
         data-bs-target="#offcanvasRight"
         aria-controls="offcanvasRight"
       >
-        <i className="fa-solid fa-bars fa-4x"></i>
+        <i className="fa-solid fa-bars fa-3x"></i>
       </button>
 
       <div
