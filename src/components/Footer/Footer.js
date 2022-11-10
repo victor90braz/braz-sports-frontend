@@ -1,20 +1,27 @@
 import FooterStyle from "./FooterStyle";
+import { AiOutlineHome } from "react-icons/ai";
+import { GiSportMedal } from "react-icons/gi";
+import { IoMdFootball } from "react-icons/io";
 
 const Footer = () => {
   return (
     <FooterStyle>
       <div className="navbar">
         <a href="#home">
-          <i className="fa-regular fa-house">Home</i>
+          <AiOutlineHome size={50} />
+          <span>Home</span>
         </a>
         <a href="#news">
-          <i className="fa-regular fa-house">Tournaments</i>
+          <GiSportMedal size={50} />
+          <span>Tournaments</span>
         </a>
         <a href="#contact">
-          <i className="fa-regular fa-house">Games</i>
+          <IoMdFootball size={50} />
+          <span>Games</span>
         </a>
         <a href="#contact">
-          <i className="fa-regular fa-house">My Events</i>
+          <AiOutlineHome size={50} />
+          <span>My Events</span>
         </a>
       </div>
     </FooterStyle>

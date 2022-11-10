@@ -1,4 +1,5 @@
 import MenuHamburgerStyle from "./MenuHamburgerStyle";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const MenuHamburger = () => {
   return (
@@ -10,7 +11,7 @@ const MenuHamburger = () => {
         data-bs-target="#offcanvasRight"
         aria-controls="offcanvasRight"
       >
-        <i className="fa-solid fa-bars fa-3x"></i>
+        <GiHamburgerMenu size={50} />
       </button>
 
       <div

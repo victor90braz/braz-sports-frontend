@@ -3,7 +3,7 @@ import styled from "styled-components";
 const FooterStyle = styled.div`
   .navbar {
     overflow: hidden;
-    background-color: #333;
+    background-color: green;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -11,7 +11,9 @@ const FooterStyle = styled.div`
 
   .navbar a {
     float: left;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
