@@ -1,4 +1,5 @@
 import PerfilStyle from "./PerfilStyle";
+import { FcLike } from "react-icons/fc";
 
 const Perfil = () => {
   return (
@@ -20,24 +21,24 @@ const Perfil = () => {
           </div>
 
           <div className="mt-5 text-center">
-            <h4 className="mb-0">Benjamin Tims</h4>
-            <span className="text-muted d-block mb-2">Los Angles</span>
+            <h4 className="mb-0">Victor Braz</h4>
+            <span className="text-muted d-block mb-2">Experienced</span>
 
-            <button className="btn btn-primary btn-sm follow">Follow</button>
+            <FcLike size={40} />
 
             <div className="d-flex justify-content-between align-items-center mt-4 px-4">
               <div className="stats">
-                <h6 className="mb-0">Followers</h6>
+                <h6 className="mb-0">Points</h6>
                 <span>8,797</span>
               </div>
 
               <div className="stats">
-                <h6 className="mb-0">Projects</h6>
+                <h6 className="mb-0">Games</h6>
                 <span>142</span>
               </div>
 
               <div className="stats">
-                <h6 className="mb-0">Ranks</h6>
+                <h6 className="mb-0">Winnings</h6>
                 <span>129</span>
               </div>
             </div>
