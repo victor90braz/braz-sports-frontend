@@ -2,13 +2,13 @@ import React from "react";
 import AppStyle from "./AppStyle";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import HomePage from "./pages/HomePage/HomePage";
+import MyEvents from "./pages/MyEvents/MyEvents";
 
 function App() {
   return (
     <AppStyle>
       <Header />
-      <HomePage />
+      <MyEvents />
       <Footer />
     </AppStyle>
   );

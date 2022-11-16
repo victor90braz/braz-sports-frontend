@@ -1,24 +1,21 @@
-import { cardImage, imagesPath } from "../../assets/imagesPath.js";
+import { imagesPath } from "../../assets/imagesPath.js";
 import CardEventStyle from "./CardEventStyle.js";
 
-const CardEvent = () => {
+const CardEvent = ({ event: { image, name, nationality } }) => {
   return (
     <CardEventStyle>
-      <div class="card">
+      <div className="card">
         <img
-          src={imagesPath.cardImage}
-          class="card-img-top"
-          alt="..."
+          src={image}
+          className="card-img-top"
+          alt="Photo user event."
           width="50px"
         />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="/#" class="btn btn-primary">
-            Go somewhere
+        <div className="card-body">
+          <h5 className="card-title">{name}</h5>
+          <p className="card-text">{nationality}</p>
+          <a href="/#" className="btn btn-primary">
+            Map Address
           </a>
         </div>
       </div>

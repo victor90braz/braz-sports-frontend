@@ -9,13 +9,13 @@ const CardEventStyle = styled.div`
 
   .card {
     border: 1px solid black;
-
     width: 80vw;
   }
 
   img {
     width: 100px;
     object-fit: contain;
+    margin: 20px;
   }
 `;
 

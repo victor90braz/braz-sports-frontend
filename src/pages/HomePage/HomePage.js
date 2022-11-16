@@ -1,10 +1,10 @@
-import CardEvent from "../../components/CardEvent/CardEvent";
+import Perfil from "../../components/Perfil/Perfil";
 import HomePageStyled from "./HomePageStyled";
 
 const HomePage = () => {
   return (
     <HomePageStyled>
-      <CardEvent />
+      <Perfil />
     </HomePageStyled>
   );
 };
