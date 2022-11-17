@@ -7,6 +7,7 @@ const FooterStyle = styled.div`
     position: fixed;
     bottom: 0;
     width: 100%;
+    padding: inherit;
   }
 
   .navbar a {
@@ -18,7 +19,7 @@ const FooterStyle = styled.div`
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 0.7em;
+    font-size: 1rem;
   }
 
   .navbar a:hover {

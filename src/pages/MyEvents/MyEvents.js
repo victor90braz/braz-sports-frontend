@@ -14,6 +14,7 @@ const MyEvents = () => {
 
   return (
     <MyEventsStyled>
+      <h2>My Events</h2>
       {allPlayers.map((loadEvent, eventKey) => (
         <CardEvent event={loadEvent} key={eventKey} />
       ))}

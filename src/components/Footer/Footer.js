@@ -8,19 +8,19 @@ const Footer = () => {
     <FooterStyle>
       <div className="navbar">
         <a href="#home">
-          <AiOutlineHome size={50} />
+          <AiOutlineHome size={30} />
           <span>Home</span>
         </a>
         <a href="#news">
-          <GiSportMedal size={50} />
+          <GiSportMedal size={30} />
           <span>Tournaments</span>
         </a>
         <a href="#contact">
-          <IoMdFootball size={50} />
+          <IoMdFootball size={30} />
           <span>Games</span>
         </a>
         <a href="#contact">
-          <AiOutlineHome size={50} />
+          <AiOutlineHome size={30} />
           <span>My Events</span>
         </a>
       </div>
