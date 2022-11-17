@@ -7,13 +7,17 @@ import MyEvents from "./pages/MyEvents/MyEvents";
 function App() {
   return (
     <AppStyle>
-      <Header />
+      <div className="containerHeader">
+        <Header />
+      </div>
 
       <div className="content">
         <MyEvents />
       </div>
 
-      <Footer />
+      <div className="containerFooter">
+        <Footer />
+      </div>
     </AppStyle>
   );
 }
