@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const MenuHamburgerStyle = styled.div`
   .enlaces {
-    background: #0a1e00;
+    background: rgb(10, 25, 41);
     display: flex;
     flex-direction: column;
 
@@ -10,10 +10,11 @@ const MenuHamburgerStyle = styled.div`
       text-decoration: none;
       text-transform: capitalize;
       font-size: 2rem;
+      font-weight: 400;
     }
 
     a:hover {
-      background-color: #f9ff00e6;
+      background-color: #fff;
     }
   }
 `;
