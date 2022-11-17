@@ -8,7 +8,11 @@ function App() {
   return (
     <AppStyle>
       <Header />
-      <MyEvents />
+
+      <div className="content">
+        <MyEvents />
+      </div>
+
       <Footer />
     </AppStyle>
   );
