@@ -10,7 +10,7 @@ import {
 const url = process.env.REACT_APP_API_URL;
 
 export const loadPlayersThunk = () => async (dispatch) => {
-  const { data } = await axios.get(`${url}players/`);
+  const { data } = await axios.get(`${url}user/`);
 
   dispatch(loadAllPlayersActionCreator(data));
 };

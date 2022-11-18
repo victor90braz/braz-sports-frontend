@@ -1,21 +1,23 @@
 import styled from "styled-components";
 
 const CardEventStyle = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 10px;
-  margin: 10px;
-
   .card {
     border: 1px solid black;
-    width: 80vw;
+    width: 95vw;
+    display: flex;
+    flex-direction: row;
+
+    .card-body_user {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
   }
 
   img {
-    width: 100px;
+    width: 90%;
     object-fit: contain;
-    margin: 20px;
   }
 `;
 
