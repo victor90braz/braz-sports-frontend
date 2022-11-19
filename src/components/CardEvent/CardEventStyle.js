@@ -1,23 +1,55 @@
 import styled from "styled-components";
 
 const CardEventStyle = styled.div`
+  width: 95%;
+
   .card {
-    border: 1px solid black;
-    width: 95vw;
-    display: flex;
-    flex-direction: row;
+    margin-bottom: 10px;
+    border: none;
 
-    .card-body_user {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-items: center;
+    .row {
+      .userName {
+        font-weight: 500;
+      }
+      .col {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .img-fluid {
+          border-radius: 20px;
+          padding: 10px;
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .col-description {
+        .dateEvent {
+          border: 0;
+        }
+
+        ul {
+          padding: 0;
+          list-style: none;
+        }
+
+        span {
+          text-transform: uppercase;
+        }
+
+        h5 {
+          font-size: 1rem;
+        }
+
+        h5,
+        li {
+          margin-bottom: 5px;
+        }
+      }
     }
-  }
-
-  img {
-    width: 90%;
-    object-fit: contain;
   }
 `;
 
