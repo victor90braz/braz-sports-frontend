@@ -3,14 +3,14 @@ import PersonalCardStyle from "./PersonalCardStyle";
 const PersonalCard = () => {
   return (
     <PersonalCardStyle>
-      <div class="card">
-        <div class="card-body">
+      <div className="card">
+        <div className="card-body">
           <img
             src="https://gcdn.emol.cl/futbol-internacional/files/2022/10/alishalehmann-fotos2.jpg"
             alt=""
           />
         </div>
-        <div class="card-body">
+        <div className="card-body">
           <ul>
             <li>Victor</li>
             <li>+34 722 888 222</li>
