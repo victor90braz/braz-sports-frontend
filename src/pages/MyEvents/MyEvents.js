@@ -1,21 +1,22 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CardEvent from "../../components/CardEvent/CardEvent";
-import { loadPlayersThunk } from "../../redux/thunks/playersThunks";
+import { loadEventsThunk } from "../../redux/thunks/eventsThunk/eventsThunk";
+
 import MyEventsStyled from "./MyEventsStyled";
 
 const MyEvents = () => {
-  const { allPlayers } = useSelector((event) => event.player);
+  const { allEvents } = useSelector((selectEvent) => selectEvent.event);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadPlayersThunk());
+    dispatch(loadEventsThunk());
   }, [dispatch]);
 
   return (
     <MyEventsStyled>
       <h2>My Events</h2>
-      {allPlayers.map((loadEvent, eventKey) => (
+      {allEvents.map((loadEvent, eventKey) => (
         <CardEvent event={loadEvent} key={eventKey} />
       ))}
     </MyEventsStyled>

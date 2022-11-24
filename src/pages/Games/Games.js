@@ -5,7 +5,7 @@ import { loadPlayersThunk } from "../../redux/thunks/playersThunks";
 import GamesStyled from "./GamesStyled";
 
 const Games = () => {
-  const { allPlayers } = useSelector((event) => event.player);
+  const { allEvents } = useSelector((event) => event.player);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const Games = () => {
   return (
     <GamesStyled>
       <h2>Games</h2>
-      {allPlayers.map((loadEvent, eventKey) => (
+      {allEvents.map((loadEvent, eventKey) => (
         <CardEvent event={loadEvent} key={eventKey} />
       ))}
     </GamesStyled>

@@ -1,9 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "../features/userSlice";
-import playerReducer from "../features/playerSlice";
+import sliceEvents from "../features/sliceEvents/sliceEvents";
 
 const store = configureStore({
-  reducer: { user: userReducer, player: playerReducer },
+  reducer: { event: sliceEvents },
 });
 
 export default store;

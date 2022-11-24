@@ -1,29 +1,37 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { loadEventsThunk } from "../../redux/thunks/eventsThunk/eventsThunk";
+
 import EventDescriptionStyle from "./EventDescriptionStyle";
 
 const EventDescription = () => {
+  const { allEvents } = useSelector((selectEvent) => selectEvent.event);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadEventsThunk());
+  }, [dispatch]);
+
   return (
     <EventDescriptionStyle>
-      <div className="row row-cols-1 row-cols-md-2 g-4">
-        <div className="col">
-          <div className="card">
-            <div className="card-body">
-              <ul>
-                <li>Open Level</li>
-                <li>Plaja de Bogatel</li>
-                <li>5€</li>
-                <li>19-11-22</li>
-                <li>07:30</li>
-              </ul>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Blanditiis, dolorem tempora quae illo in qui. Consequuntur
-                dolore aspernatur amet repellat molestias mollitia nesciunt,
-                possimus quo consectetur nostrum temporibus, voluptates earum.
-              </p>
+      {allEvents.map((event, index) => (
+        <div className="row row-cols-1 row-cols-md-2 g-4" key={index}>
+          <div className="col">
+            <div className="card">
+              <div className="card-body">
+                <ul>
+                  <li>{event.level}</li>
+                  <li>{event.locationEvent}</li>
+                  <li>{event.payment}€</li>
+                  <li>{event.dateEvent}</li>
+                  <li>{event.time}</li>
+                </ul>
+                <p>{event.descriptionEvent}</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      ))}
     </EventDescriptionStyle>
   );
 };
