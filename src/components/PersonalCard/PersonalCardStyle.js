@@ -10,11 +10,10 @@ const PersonalCardStyle = styled.div`
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 70%;
 
     img {
-      width: 75px;
-      height: 75px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       object-fit: cover;
     }

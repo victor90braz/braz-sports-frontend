@@ -37,6 +37,7 @@ const eventSlice = createSlice({
     }),
 
     blankState: (allEvents) => ({ ...allEvents, event: {} }),
+    statusEvent: (allEvents) => ({ ...allEvents, event: false }),
   },
 });
 
@@ -47,6 +48,7 @@ export const {
   createEvent: createEventActionCreator,
   updateEvent: updateEventActionCreator,
   blankState: blankStateActionCreator,
+  statusEvent: statusEventActionCreator,
 } = eventSlice.actions;
 
 export default eventSlice.reducer;

@@ -4,10 +4,10 @@ const PersonalCard = () => {
   return (
     <PersonalCardStyle>
       <div className="card">
-        <div className="card-body">
+        <div>
           <img
             src="https://gcdn.emol.cl/futbol-internacional/files/2022/10/alishalehmann-fotos2.jpg"
-            alt=""
+            alt="Perfil of user"
           />
         </div>
         <div className="card-body">

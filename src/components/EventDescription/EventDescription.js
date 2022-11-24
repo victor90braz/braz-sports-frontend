@@ -15,20 +15,16 @@ const EventDescription = () => {
   return (
     <EventDescriptionStyle>
       {allEvents.map((event, index) => (
-        <div className="row row-cols-1 row-cols-md-2 g-4" key={index}>
-          <div className="col">
-            <div className="card">
-              <div className="card-body">
-                <ul>
-                  <li>{event.level}</li>
-                  <li>{event.locationEvent}</li>
-                  <li>{event.payment}€</li>
-                  <li>{event.dateEvent}</li>
-                  <li>{event.time}</li>
-                </ul>
-                <p>{event.descriptionEvent}</p>
-              </div>
-            </div>
+        <div className="card" key={index}>
+          <div className="card-body">
+            <ul>
+              <li>{event.level}</li>
+              <li>{event.locationEvent}</li>
+              <li>{event.payment}€</li>
+              <li>{event.dateEvent}</li>
+              <li>{event.time}</li>
+            </ul>
+            <p>{event.descriptionEvent}</p>
           </div>
         </div>
       ))}

@@ -1,11 +1,19 @@
 import styled from "styled-components";
 
 const EventDescriptionStyle = styled.div`
-  border: none;
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
   ul {
     padding: 0;
     list-style: none;
+
+    li {
+      margin-bottom: 10px;
+    }
   }
 `;
 
