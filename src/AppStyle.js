@@ -7,6 +7,7 @@ const AppStyle = styled.div`
     bottom: 82px;
     left: 0px;
     right: 0px;
+    overflow: auto;
   }
 `;
 
