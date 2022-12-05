@@ -14,6 +14,7 @@ import CreatePlayer from "./components/CreatePlayer/CreatePlayer";
 import { loadPlayersThunk } from "./redux/thunks/playersThunks";
 import Perfil from "./components/Perfil/Perfil";
 import ListPlayers from "./components/ListPlayers/ListPlayers";
+import AppStyle from "./AppStyle";
 
 function App() {
   const { logged } = useSelector((state) => state.user);
@@ -32,7 +33,7 @@ function App() {
   }, [dispatch, logged, navigate, token]);
 
   return (
-    <>
+    <AppStyle>
       {window.location.pathname !== "/login" &&
         window.location.pathname !== "/register" && (
           <>
@@ -89,7 +90,7 @@ function App() {
           }
         />
       </Routes>
-    </>
+    </AppStyle>
   );
 }
 

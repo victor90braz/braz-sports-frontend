@@ -1,30 +1,26 @@
 import styled from "styled-components";
 
 const PlayerCardStyles = styled.div`
-  width: 320px;
-  height: 400px;
-
-  .container-image {
-    border: 2px dotted red;
-    display: flex;
-    justify-content: center;
-
-    img {
-      width: 100px;
-    }
-  }
-  .container-content {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .container-actions {
+  .card {
+    width: 600px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    font-size: 1.1em;
+
+    .wrapp-image {
+      flex: 0.5;
+      border: none1 img {
+        border-radius: 50%;
+        object-fit: contain;
+      }
+    }
+
+    .card-body {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 `;
 
