@@ -44,11 +44,6 @@ const Perfil = () => {
                 <i className="fa fa-linkedin"></i>
               </a>
             </li>
-            <li>
-              <a href="#">
-                <i className="fa fa-codepen"></i>
-              </a>
-            </li>
           </ul>
           <NavLink to="/create">
             <button className="btn draw-border">CREATE NEW EVENT</button>
