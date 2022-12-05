@@ -9,10 +9,14 @@ const PlayerCardStyles = styled.div`
 
     .wrapp-image {
       flex: 0.5;
-      border: none1 img {
-        border-radius: 50%;
-        object-fit: contain;
+      .card-img-top {
+        object-fit: cover;
+        height: 65%;
       }
+    }
+
+    .wrapp-image:hover {
+      background: red;
     }
 
     .card-body {
@@ -20,6 +24,10 @@ const PlayerCardStyles = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      button:hover {
+        background: red;
+      }
     }
   }
 `;
