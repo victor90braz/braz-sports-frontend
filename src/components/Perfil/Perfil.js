@@ -26,12 +26,12 @@ const Perfil = () => {
           </div>
           <ul className="social-icons">
             <li>
-              <a href="#">
+              <a href="/#">
                 <i className="fa fa-instagram"></i>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/#">
                 <i className="fa fa-twitter"></i>
               </a>
             </li>
@@ -39,6 +39,7 @@ const Perfil = () => {
               <a
                 href="https://www.linkedin.com/in/victor-braz/"
                 target={"_blank"}
+                rel="noreferrer"
               >
                 <i className="fa-brands fa-linkedin"></i>
               </a>

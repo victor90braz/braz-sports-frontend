@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { correctAction } from "../../modals/modals";
-import { blankStateActionCreator } from "../../redux/features/playerSlice";
 import { editPlayerThunk } from "../../redux/thunks/playersThunks";
 import EditPlayerStyle from "./EditPlayerStyle";
 
@@ -14,15 +13,6 @@ const EditPlayer = () => {
   const { player } = useSelector((state) => state.player);
 
   const [valuePlayer, setFormEditPlayer] = useState(player);
-
-  const buttonDisabled =
-    valuePlayer.level === "" ||
-    valuePlayer.name === "" ||
-    valuePlayer.locationEvent === "" ||
-    valuePlayer.payment === "" ||
-    valuePlayer.dateEvent === "" ||
-    valuePlayer.time === "" ||
-    valuePlayer.descriptionEvent === "";
 
   const editPlayerData = (event) => {
     setFormEditPlayer({
@@ -37,17 +27,14 @@ const EditPlayer = () => {
     if (player) {
       dispatch(
         editPlayerThunk(valuePlayer.id, {
-          level: valuePlayer.level,
           name: valuePlayer.name,
-          locationEvent: valuePlayer.locationEvent,
-          payment: valuePlayer.payment,
-          dateEvent: valuePlayer.dateEvent,
-          time: valuePlayer.time,
           descriptionEvent: valuePlayer.descriptionEvent,
+          dateEvent: valuePlayer.dateEvent,
+          timeEvent: valuePlayer.timeEvent,
+          image: valuePlayer.image,
         })
       );
 
-      dispatch(blankStateActionCreator());
       correctAction(`${valuePlayer.name} has been edited successfully`);
       navigate("/home");
     }
@@ -55,90 +42,74 @@ const EditPlayer = () => {
 
   return (
     <EditPlayerStyle>
-      <div class="modal-dialog modal-dialog-scrollable"></div>
       <form autoComplete="off" noValidate onSubmit={submitEdit}>
-        <h2>EDIT PLAYER</h2>
+        <fieldset>
+          <legend>Edit</legend>
+          <div class="mb-3">
+            <label for="name" class="form-label">
+              Name:
+            </label>
+            <input
+              class="form-control"
+              id="name"
+              rows="3"
+              value={valuePlayer.name}
+              onChange={editPlayerData}
+            />
+          </div>
 
-        <label htmlFor="level">level</label>
-        <input
-          id="level"
-          type="text"
-          value={valuePlayer.level}
-          onChange={editPlayerData}
-          className="inputbox"
-          name="level"
-          required
-        />
-
-        <label htmlFor="name">name</label>
-        <input
-          id="name"
-          type="text"
-          value={valuePlayer.name}
-          onChange={editPlayerData}
-          className="inputbox"
-          name="name"
-          required
-        />
-
-        <label htmlFor="locationEvent">locationEvent</label>
-        <input
-          id="locationEvent"
-          type="text"
-          value={valuePlayer.locationEvent}
-          onChange={editPlayerData}
-          className="inputbox"
-          name="locationEvent"
-          required
-        />
-
-        <label htmlFor="payment">payment</label>
-        <input
-          id="payment"
-          type="text"
-          value={valuePlayer.payment}
-          onChange={editPlayerData}
-          className="inputbox"
-          name="payment"
-          required
-        />
-
-        <label htmlFor="dateEvent">dateEvent</label>
-        <input
-          id="dateEvent"
-          type="text"
-          value={valuePlayer.dateEvent}
-          onChange={editPlayerData}
-          className="inputbox"
-          name="dateEvent"
-          required
-        />
-
-        <label htmlFor="time">time</label>
-        <input
-          id="time"
-          type="time"
-          value={valuePlayer.time}
-          onChange={editPlayerData}
-          className="inputbox"
-          name="time"
-          required
-        />
-
-        <label htmlFor="descriptionEvent">descriptionEvent</label>
-        <input
-          id="descriptionEvent"
-          type="text"
-          value={valuePlayer.descriptionEvent}
-          onChange={editPlayerData}
-          className="inputbox"
-          name="descriptionEvent"
-          required
-        />
-
-        <button disabled={buttonDisabled} type="submit" className="button">
-          Set Player
-        </button>
+          <div class="mb-3">
+            <label for="descriptionEvent" class="form-label">
+              Description:
+            </label>
+            <textarea
+              type="text"
+              class="form-control"
+              id="descriptionEvent"
+              value={valuePlayer.descriptionEvent}
+              onChange={editPlayerData}
+            />
+          </div>
+          <div class="mb-3">
+            <label for="dateEvent" class="form-label">
+              Date:
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="dateEvent"
+              value={valuePlayer.dateEvent}
+              onChange={editPlayerData}
+            />
+          </div>
+          <div class="mb-3">
+            <label for="timeEvent" class="form-label">
+              Time:
+            </label>
+            <input
+              type="time"
+              class="form-control"
+              id="timeEvent"
+              value={valuePlayer.time}
+              onChange={editPlayerData}
+            />
+          </div>
+          <div class="mb-3">
+            <label for="image" class="form-label">
+              Image:
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="image"
+              value={valuePlayer.image}
+              onChange={editPlayerData}
+            />
+          </div>
+          <button type="submit" className="button">
+            Set Player
+          </button>
+        </fieldset>
       </form>
     </EditPlayerStyle>
   );
