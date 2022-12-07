@@ -20,7 +20,9 @@ const PlayerCard = ({
   };
 
   const handleDelete = () => {
-    dispatch(deletePlayerThunk(id));
+    const deleteCard = window.confirm("Are you sure to delete this card?");
+
+    if (deleteCard) dispatch(deletePlayerThunk(id));
   };
   return (
     <PlayerCardStyles>

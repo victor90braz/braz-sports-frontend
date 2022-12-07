@@ -40,7 +40,7 @@ const Perfil = () => {
                 href="https://www.linkedin.com/in/victor-braz/"
                 target={"_blank"}
               >
-                <i class="fa-brands fa-linkedin"></i>
+                <i className="fa-brands fa-linkedin"></i>
               </a>
             </li>
           </ul>
