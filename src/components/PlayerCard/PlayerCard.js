@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { deletePlayerThunk } from "../../redux/thunks/playersThunks";
 import PlayerCardStyles from "./PlayerCardStyles";
 import { RiDeleteBin6Fill } from "react-icons/ri";
-import { BiDetail } from "react-icons/bi";
 
 const PlayerCard = ({
   player: { id, descriptionEvent, dateEvent, timeEvent, image, name },
