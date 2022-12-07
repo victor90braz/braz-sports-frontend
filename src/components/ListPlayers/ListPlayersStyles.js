@@ -6,7 +6,8 @@ const ListPlayersStyles = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+
+    width: 80vw;
   }
 `;
 

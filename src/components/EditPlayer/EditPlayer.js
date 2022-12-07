@@ -55,6 +55,7 @@ const EditPlayer = () => {
 
   return (
     <EditPlayerStyle>
+      <div class="modal-dialog modal-dialog-scrollable"></div>
       <form autoComplete="off" noValidate onSubmit={submitEdit}>
         <h2>EDIT PLAYER</h2>
 

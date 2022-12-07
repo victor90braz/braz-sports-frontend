@@ -17,7 +17,6 @@ const PerfilStyle = styled.div`
     justify-content: center;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.7);
-    color: white;
     width: 80vw;
   }
 

@@ -22,7 +22,6 @@ const Perfil = () => {
           <p className="card__name">{player.level}</p>
           <div className="grid-container">
             <div className="grid-child-posts">{player.loser} Loser</div>
-
             <div className="grid-child-followers">{player.winner} Winner</div>
           </div>
           <ul className="social-icons">
@@ -41,7 +40,7 @@ const Perfil = () => {
                 href="https://www.linkedin.com/in/victor-braz/"
                 target={"_blank"}
               >
-                <i className="fa fa-linkedin"></i>
+                <i class="fa-brands fa-linkedin"></i>
               </a>
             </li>
           </ul>

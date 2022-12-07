@@ -1,13 +1,8 @@
-/* eslint-disable jsx-a11y/iframe-has-title */
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { correctAction } from "../../modals/modals";
 import { blankStateActionCreator } from "../../redux/features/playerSlice";
-import {
-  deletePlayerThunk,
-  getPlayerThunk,
-} from "../../redux/thunks/playersThunks";
+import { getPlayerThunk } from "../../redux/thunks/playersThunks";
 import DetailPlayerStyle from "./DetailPlayerStyle";
 
 const DetailPlayer = () => {
@@ -16,12 +11,6 @@ const DetailPlayer = () => {
 
   const { id } = useParams();
   const { player: allPlayers } = useSelector((state) => state.player);
-
-  const handleDelete = () => {
-    dispatch(deletePlayerThunk(id));
-    correctAction(`${allPlayers.name} deleted`);
-    navigate("/home");
-  };
 
   const handleEdit = () => {
     dispatch(getPlayerThunk(id));
@@ -52,13 +41,6 @@ const DetailPlayer = () => {
           onClick={handleEdit}
         >
           Edit
-        </button>
-        <button
-          type="button"
-          className="btn btn-secondary float-end"
-          onClick={handleDelete}
-        >
-          Delete
         </button>
       </div>
     </DetailPlayerStyle>
