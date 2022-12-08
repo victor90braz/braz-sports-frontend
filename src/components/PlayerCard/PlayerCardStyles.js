@@ -9,18 +9,35 @@ const PlayerCardStyles = styled.div`
   margin: 10px;
   padding: 10px;
   color: white;
-  min-width: 320px;
+  width: 400px;
   border-radius: 20px;
 
   .card-title {
-    font-size: x-large;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
   }
 
-  .card-body:hover,
+  .card-meta {
+    font-size: medium;
+  }
+
   .rounded-circle:hover {
     border: 2px solid black;
     border-radius: 20px;
     cursor: pointer;
+  }
+
+  .location-container > li {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 5px;
+  }
+  .card-body:hover {
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 20px;
+    background: red;
+    opacity: 0.6;
   }
 
   .card-body,
@@ -46,6 +63,7 @@ const PlayerCardStyles = styled.div`
 
       .rounded-circle:hover {
         opacity: 0.7;
+        cursor: pointer;
       }
     }
 
@@ -53,10 +71,6 @@ const PlayerCardStyles = styled.div`
       .text-white {
         font-size: x-large;
       }
-    }
-
-    .media-body:hover {
-      cursor: pointer;
     }
 
     .media,

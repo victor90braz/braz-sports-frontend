@@ -7,9 +7,22 @@ import {
 import PlayerCardStyles from "./PlayerCardStyles";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { FiEdit } from "react-icons/fi";
+import { GoLocation } from "react-icons/go";
+import { BiTime } from "react-icons/bi";
+import { BsCalendarDate } from "react-icons/bs";
 
 const PlayerCard = ({
-  player: { id, descriptionEvent, dateEvent, timeEvent, image, name },
+  player: {
+    id,
+    descriptionEvent,
+    dateEvent,
+    timeEvent,
+    image,
+    name,
+    province,
+    country,
+    locationEvent,
+  },
 }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -37,10 +50,23 @@ const PlayerCard = ({
     <PlayerCardStyles>
       <section className="wrapper">
         <div className="card-body" onClick={handleDetail}>
-          <small className="card-meta mb-2">Beach Volley</small>
+          <h2 className="card-meta mb-2">Beach Volley</h2>
           <h1 className="card-title mt-0 ">{descriptionEvent}</h1>
-          <small>Date: {dateEvent}</small>
-          <small>Time: {timeEvent}</small>
+
+          <ul className="location-container">
+            <li>
+              <BsCalendarDate size={25} />
+              {dateEvent}
+            </li>
+            <li>
+              <BiTime size={25} />
+              {timeEvent}
+            </li>
+            <li>
+              <GoLocation size={25} />
+              {locationEvent}, {province}, {country}
+            </li>
+          </ul>
         </div>
 
         <div className="card-perfil" onClick={handlePerfil}>
