@@ -21,7 +21,7 @@ const GoogleMap = () => {
     <MapStyle>
       <MapContainer
         center={positionEvent}
-        zoom={16}
+        zoom={17}
         scrollWheelZoom={true}
         className="leaflet-container"
       >
