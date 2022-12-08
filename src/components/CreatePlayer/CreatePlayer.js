@@ -109,14 +109,6 @@ const CreatePlayer = () => {
           </a>
         </label>
 
-        <h3>Follow the steps:</h3>
-        <ul>
-          <li>Click in the icon above;</li>
-          <li>Search an image;</li>
-          <li>Open the image adress in a new page;</li>
-          <li>Copy the URL.</li>
-        </ul>
-
         <input
           id="image"
           type="url"
@@ -138,17 +130,6 @@ const CreatePlayer = () => {
             YouTube
           </a>
         </label>
-
-        <h3>Follow the steps:</h3>
-        <ul>
-          <li>Click in the icon above;</li>
-          <li>On Youtube select your player;</li>
-          <li>Click in sharevideo and copy the embledID;</li>
-          <li>
-            https://youtu.be/
-            <strong>6zQy_O3NoJU</strong>
-          </li>
-        </ul>
 
         <input
           id="video"
