@@ -9,7 +9,7 @@ const PlayerCardStyles = styled.div`
   margin: 10px;
   padding: 10px;
   color: white;
-  min-width: 400px;
+  min-width: 320px;
   border-radius: 20px;
 
   .card-title {
