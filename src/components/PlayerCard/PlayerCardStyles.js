@@ -55,6 +55,10 @@ const PlayerCardStyles = styled.div`
       }
     }
 
+    .media-body:hover {
+      cursor: pointer;
+    }
+
     .media,
     .media-body,
     .rounded-circle {
@@ -69,12 +73,18 @@ const PlayerCardStyles = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    gap: 5px;
   }
 
-  .card-action_icon:hover {
-    margin: 10px;
+  .icon_delete:hover {
     font-size: 2rem;
     color: #f01c1c;
+    cursor: pointer;
+  }
+
+  .icon_edit:hover {
+    font-size: 2rem;
+    color: #4cda4c;
     cursor: pointer;
   }
 `;

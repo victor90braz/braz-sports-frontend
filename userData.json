@@ -1,12 +1,12 @@
 {
   "data": {
     "image": "https://www.futbin.com/content/fifa22/img/players/p50332827.png?v=15",
-    "name": "Buffon",
+    "name": "Pele",
     "surname": "Braz",
-    "username": "victor90braz",
+    "username": "Pele0braz",
     "password": "12345",
     "age": "32",
-    "email": "victor.90braz@gmail.com",
+    "email": "pele@gmail.com",
     "contactNumber": "766330773",
     "country": "Brazil",
     "province": "Barcelona",
@@ -31,6 +31,8 @@
     "flaw": "10",
     "blocker": "10",
     "defense": "7",
-    "expectation": "7"
+    "expectation": "7",
+    "latitude": "41.478626049462946",
+    "longitude": "2.3205185407918014"
   }
 }

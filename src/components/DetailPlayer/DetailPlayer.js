@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { blankStateActionCreator } from "../../redux/features/playerSlice";
 import { getPlayerThunk } from "../../redux/thunks/playersThunks";
+import GoogleMap from "../Map/Map";
 import DetailPlayerStyle from "./DetailPlayerStyle";
 
 const DetailPlayer = () => {
@@ -24,6 +25,10 @@ const DetailPlayer = () => {
 
   return (
     <DetailPlayerStyle>
+      <div>
+        <GoogleMap />
+      </div>
+
       <div className="card text-center">
         <div className="card-header">{allPlayers.level}</div>
         <div className="card-body">

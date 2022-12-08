@@ -46,7 +46,7 @@ const EditPlayer = () => {
         <fieldset>
           <legend>Edit</legend>
           <div class="mb-3">
-            <label for="name" class="form-label">
+            <label htmlFor="name" class="form-label">
               Name:
             </label>
             <input
@@ -59,7 +59,7 @@ const EditPlayer = () => {
           </div>
 
           <div class="mb-3">
-            <label for="descriptionEvent" class="form-label">
+            <label htmlFor="descriptionEvent" class="form-label">
               Description:
             </label>
             <textarea
@@ -71,7 +71,7 @@ const EditPlayer = () => {
             />
           </div>
           <div class="mb-3">
-            <label for="dateEvent" class="form-label">
+            <label htmlFor="dateEvent" class="form-label">
               Date:
             </label>
             <input
@@ -83,7 +83,7 @@ const EditPlayer = () => {
             />
           </div>
           <div class="mb-3">
-            <label for="timeEvent" class="form-label">
+            <label htmlFor="timeEvent" class="form-label">
               Time:
             </label>
             <input
@@ -95,7 +95,7 @@ const EditPlayer = () => {
             />
           </div>
           <div class="mb-3">
-            <label for="image" class="form-label">
+            <label htmlFor="image" class="form-label">
               Image:
             </label>
             <input

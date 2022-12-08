@@ -24,10 +24,8 @@ const LoginForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (formValue.username === "" || formValue.password === "") {
+    if (formValue.username === "" || formValue.password === "")
       wrongAction("Please fill in the required field (*)");
-      return;
-    }
 
     await dispatch(loginThunk(formValue));
     navigate("/home");

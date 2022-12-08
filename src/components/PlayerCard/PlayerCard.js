@@ -1,8 +1,12 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { deletePlayerThunk } from "../../redux/thunks/playersThunks";
+import {
+  deletePlayerThunk,
+  getPlayerThunk,
+} from "../../redux/thunks/playersThunks";
 import PlayerCardStyles from "./PlayerCardStyles";
 import { RiDeleteBin6Fill } from "react-icons/ri";
+import { FiEdit } from "react-icons/fi";
 
 const PlayerCard = ({
   player: { id, descriptionEvent, dateEvent, timeEvent, image, name },
@@ -18,23 +22,25 @@ const PlayerCard = ({
     navigate(`/perfil/${id}`);
   };
 
+  const handleEdit = () => {
+    dispatch(getPlayerThunk(id));
+    navigate(`/edit/${id}`);
+  };
+
   const handleDelete = () => {
     const deleteCard = window.confirm("Are you sure to delete this card?");
 
     if (deleteCard) dispatch(deletePlayerThunk(id));
   };
+
   return (
     <PlayerCardStyles>
       <section className="wrapper">
         <div className="card-body" onClick={handleDetail}>
           <small className="card-meta mb-2">Beach Volley</small>
           <h1 className="card-title mt-0 ">{descriptionEvent}</h1>
-          <small>
-            <i className="far fa-clock"></i>Date: {dateEvent}
-          </small>
-          <small>
-            <i className="far fa-clock"></i>Time: {timeEvent}
-          </small>
+          <small>Date: {dateEvent}</small>
+          <small>Time: {timeEvent}</small>
         </div>
 
         <div className="card-perfil" onClick={handlePerfil}>
@@ -56,8 +62,9 @@ const PlayerCard = ({
           <RiDeleteBin6Fill
             size={30}
             onClick={handleDelete}
-            className="card-action_icon"
+            className="icon_delete"
           />
+          <FiEdit size={30} onClick={handleEdit} className="icon_edit" />
         </div>
       </section>
     </PlayerCardStyles>
