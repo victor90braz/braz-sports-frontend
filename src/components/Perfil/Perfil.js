@@ -2,16 +2,21 @@ import PerfilStyle from "./PerfilStyle";
 import { getPlayerThunk } from "../../redux/thunks/playersThunks";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 
 const Perfil = () => {
   const { id } = useParams();
   const { player } = useSelector((state) => state.player);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getPlayerThunk(id));
   }, [dispatch, id]);
+
+  const handleDetail = () => {
+    navigate(`/detail/${id}`);
+  };
 
   return (
     <PerfilStyle>
@@ -46,8 +51,12 @@ const Perfil = () => {
             </li>
           </ul>
           <NavLink to="/create">
-            <button className="btn draw-border">CREATE NEW EVENT</button>
+            <button className="btn draw-border">CREATE A NEW EVENT</button>
           </NavLink>
+
+          <button className="btn draw-border" onClick={handleDetail}>
+            EVENT DETAIL
+          </button>
         </div>
       </div>
     </PerfilStyle>

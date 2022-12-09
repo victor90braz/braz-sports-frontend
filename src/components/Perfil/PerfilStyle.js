@@ -18,6 +18,7 @@ const PerfilStyle = styled.div`
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.7);
     width: 80vw;
+    margin-bottom: 30px;
   }
 
   .card__name {

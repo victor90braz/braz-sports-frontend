@@ -1,23 +1,18 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
-import { blankStateActionCreator } from "../../redux/features/playerSlice";
+import { useParams } from "react-router-dom";
 import { getPlayerThunk } from "../../redux/thunks/playersThunks";
 import GoogleMap from "../Map/Map";
 import DetailPlayerStyle from "./DetailPlayerStyle";
+import { GoLocation } from "react-icons/go";
+import { BiTime } from "react-icons/bi";
+import { BsCalendarDate } from "react-icons/bs";
 
 const DetailPlayer = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const { id } = useParams();
   const { player: allPlayers } = useSelector((state) => state.player);
-
-  const handleEdit = () => {
-    dispatch(getPlayerThunk(id));
-    dispatch(blankStateActionCreator());
-    navigate(`/edit/${id}`);
-  };
 
   useEffect(() => {
     dispatch(getPlayerThunk(id));
@@ -25,28 +20,36 @@ const DetailPlayer = () => {
 
   return (
     <DetailPlayerStyle>
-      <div>
-        <GoogleMap />
-      </div>
-
-      <div className="card text-center">
-        <div className="card-header">{allPlayers.level}</div>
-        <div className="card-body">
-          <h5 className="card-title">{allPlayers.locationEvent}</h5>
-          <p className="card-text">{allPlayers.payment}€</p>
-          <p className="card-text">{allPlayers.dateEvent}</p>
-          <p className="card-text">{allPlayers.time}</p>
+      <div class="card">
+        <div class="user">
+          <div class="user-info">
+            <img src={allPlayers.image} alt="user" />
+            <h5>{allPlayers.name}</h5>
+          </div>
         </div>
-      </div>
 
-      <div className="bg-info clearfix">
-        <button
-          type="button"
-          className="btn btn-secondary float-start"
-          onClick={handleEdit}
-        >
-          Edit
-        </button>
+        <div class="card-body">
+          <span class="tag tag-teal">Volley</span>
+          <h4>{allPlayers.descriptionEvent}</h4>
+
+          <span>
+            <BsCalendarDate size={25} />
+            {allPlayers.dateEvent}
+          </span>
+
+          <span>
+            <BiTime size={25} />
+            {allPlayers.timeEvent}
+          </span>
+
+          <span>
+            <GoLocation size={25} />
+            {allPlayers.locationEvent}, {allPlayers.province},
+            {allPlayers.country}
+          </span>
+        </div>
+
+        <GoogleMap />
       </div>
     </DetailPlayerStyle>
   );
