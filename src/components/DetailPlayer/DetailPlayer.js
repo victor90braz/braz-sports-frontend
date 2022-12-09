@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getPlayerThunk } from "../../redux/thunks/playersThunks";
+import {
+  getPlayerThunk,
+  loadPlayersThunk,
+} from "../../redux/thunks/playersThunks";
 import GoogleMap from "../Map/Map";
 import DetailPlayerStyle from "./DetailPlayerStyle";
 import { GoLocation } from "react-icons/go";
@@ -16,6 +19,7 @@ const DetailPlayer = () => {
 
   useEffect(() => {
     dispatch(getPlayerThunk(id));
+    dispatch(loadPlayersThunk());
   }, [dispatch, id]);
 
   return (
