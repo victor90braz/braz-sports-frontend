@@ -167,7 +167,7 @@ const EditDetailPlayer = () => {
             />
           </div>
 
-          <button type="submit" classNameName="button">
+          <button type="submit" className="button">
             Set Detail Player
           </button>
         </fieldset>

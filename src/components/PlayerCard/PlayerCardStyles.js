@@ -26,12 +26,6 @@ const PlayerCardStyles = styled.div`
     cursor: pointer;
   }
 
-  .location-container > li {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 5px;
-  }
-
   .card-body,
   .media,
   .media-body {
@@ -42,7 +36,10 @@ const PlayerCardStyles = styled.div`
   }
 
   .card-body {
-    padding: 10px;
+    .location-container {
+      display: flex;
+      gap: 10px;
+    }
   }
 
   .card-perfil {
