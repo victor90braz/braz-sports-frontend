@@ -5,6 +5,10 @@ const CreatePlayerStyle = styled.div`
     display: flex;
     flex-direction: column;
   }
+
+  button {
+    margin-top: 10px;
+  }
 `;
 
 export default CreatePlayerStyle;

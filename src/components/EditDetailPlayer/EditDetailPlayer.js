@@ -46,13 +46,14 @@ const EditDetailPlayer = () => {
     <EditDetailPlayerStyle>
       <form autoComplete="off" noValidate onSubmit={submitEdit}>
         <fieldset>
-          <legend>Edit</legend>
-          <div class="mb-3">
-            <label htmlFor="image" class="form-label">
+          <legend>Edit Detail Player</legend>
+
+          <div className="mb-3">
+            <label htmlFor="image" className="form-label">
               image:
             </label>
             <input
-              class="form-control"
+              className="form-control"
               id="image"
               rows="3"
               value={valuePlayer.image}
@@ -60,72 +61,74 @@ const EditDetailPlayer = () => {
             />
           </div>
 
-          <label htmlFor="name" class="form-label">
-            name:
-          </label>
-          <input
-            type={"date"}
-            class="form-control"
-            id="name"
-            rows="3"
-            value={valuePlayer.name}
-            onChange={editPlayerData}
-          />
+          <div className="mb-3">
+            <label htmlFor="name" className="form-label">
+              name:
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="name"
+              rows="3"
+              value={valuePlayer.name}
+              onChange={editPlayerData}
+            />
+          </div>
 
-          <div class="mb-3">
-            <label htmlFor="dateEvent" class="form-label">
+          <div className="mb-3">
+            <label htmlFor="dateEvent" className="form-label">
               dateEvent:
             </label>
-            <textarea
-              type="text"
-              class="form-control"
+            <input
+              type="date"
+              className="form-control"
               id="dateEvent"
               value={valuePlayer.dateEvent}
               onChange={editPlayerData}
             />
           </div>
 
-          <div class="mb-3">
-            <label htmlFor="locationEvent" class="form-label">
+          <div className="mb-3">
+            <label htmlFor="locationEvent" className="form-label">
               locationEvent:
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="locationEvent"
               value={valuePlayer.locationEvent}
               onChange={editPlayerData}
             />
           </div>
 
-          <div class="mb-3">
-            <label htmlFor="province" class="form-label">
+          <div className="mb-3">
+            <label htmlFor="province" className="form-label">
               province:
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="province"
               value={valuePlayer.province}
               onChange={editPlayerData}
             />
           </div>
 
-          <div class="mb-3">
-            <label htmlFor="country" class="form-label">
+          <div className="mb-3">
+            <label htmlFor="country" className="form-label">
               country:
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="country"
               value={valuePlayer.country}
               onChange={editPlayerData}
             />
           </div>
 
-          <button type="submit" className="button">
-            Set Player
+          <button type="submit" classNameName="button">
+            Set Detail Player
           </button>
         </fieldset>
       </form>

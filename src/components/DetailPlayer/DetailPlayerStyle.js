@@ -2,8 +2,11 @@ import styled from "styled-components";
 
 const DetailPlayerStyle = styled.div`
   .card {
-    width: 80vw;
-    height: 90vh;
+    padding: 10px;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    margin-bottom: 10vh;
+    background-color: #47bcd4;
     .user {
       display: flex;
       margin-top: auto;

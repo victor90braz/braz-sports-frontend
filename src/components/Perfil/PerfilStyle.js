@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 const PerfilStyle = styled.div`
-  @import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;500&display=swap");
-
   .container-perfil {
     display: flex;
     flex-direction: column;

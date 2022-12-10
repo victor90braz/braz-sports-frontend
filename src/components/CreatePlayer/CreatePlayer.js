@@ -80,7 +80,7 @@ const CreatePlayer = () => {
   return (
     <CreatePlayerStyle>
       <form autoComplete="off" noValidate onSubmit={submit}>
-        <h1>Create Player</h1>
+        <h1>Create Card Player</h1>
 
         <label htmlFor="sport">sport</label>
         <input
