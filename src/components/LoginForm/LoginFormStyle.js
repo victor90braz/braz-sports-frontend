@@ -21,12 +21,11 @@ const LoginFormStyle = styled.div`
 
   .container {
     position: relative;
-    width: 350px;
-    height: 500px;
+    width: 400px;
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
-    background: #ecf0f3;
+    background: #084298;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -34,13 +33,12 @@ const LoginFormStyle = styled.div`
   }
 
   .brand-logo {
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
     margin: auto;
     display: block;
     border-radius: 50%;
     box-sizing: border-box;
-    box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
   }
 
   .nav-link {
@@ -76,12 +74,11 @@ const LoginFormStyle = styled.div`
     box-sizing: border-box;
   }
 
-  label {
-    margin-bottom: 4px;
-  }
-
-  label:nth-of-type(2) {
-    margin-top: 12px;
+  label,
+  span {
+    margin: 8px;
+    padding: 10px;
+    color: #fff;
   }
 
   input::placeholder {
@@ -102,12 +99,12 @@ const LoginFormStyle = styled.div`
     color: white;
     margin-top: 20px;
     background: #1da1f2;
-    height: 40px;
     border-radius: 20px;
     cursor: pointer;
     font-weight: 900;
-    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
     transition: 0.5s;
+    padding: 20px;
+    margin-top: 30px;
   }
 
   button:hover {

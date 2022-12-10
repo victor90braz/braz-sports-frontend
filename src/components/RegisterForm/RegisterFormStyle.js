@@ -21,12 +21,11 @@ const RegisterFormStyle = styled.div`
 
   .container {
     position: relative;
-    width: 350px;
-    height: 600px;
+    width: 400px;
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
-    background: #ecf0f3;
+    background: #b6d973eb;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -34,13 +33,12 @@ const RegisterFormStyle = styled.div`
   }
 
   .brand-logo {
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
     margin: auto;
     display: block;
     border-radius: 50%;
     box-sizing: border-box;
-    box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
   }
 
   .nav-link {
@@ -106,7 +104,6 @@ const RegisterFormStyle = styled.div`
     border-radius: 20px;
     cursor: pointer;
     font-weight: 900;
-    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
     transition: 0.5s;
   }
 

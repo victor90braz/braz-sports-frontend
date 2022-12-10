@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
+import { imagesPath } from "../../assets/imagesPath";
 import { wrongAction } from "../../modals/modals";
 import { loginThunk } from "../../redux/thunks/userThunks";
 
@@ -35,7 +36,11 @@ const LoginForm = () => {
     <LoginFormStyle>
       <div className="container">
         <div>
-          <img src="./top11-logo.png" alt="" className="brand-logo" />
+          <img
+            src={imagesPath.brand}
+            alt="Brand Logo Login"
+            className="brand-logo"
+          />
         </div>
 
         <form autoComplete="off" noValidate onSubmit={handleSubmit}>

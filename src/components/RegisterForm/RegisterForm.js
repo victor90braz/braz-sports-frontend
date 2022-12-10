@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
+import { imagesPath } from "../../assets/imagesPath";
 import { correctAction, wrongAction } from "../../modals/modals";
 import { registerThunk } from "../../redux/thunks/userThunks";
 import RegisterFormStyle from "./RegisterFormStyle";
@@ -44,7 +45,7 @@ const RegisterForm = () => {
     <RegisterFormStyle>
       <div className="container">
         <div>
-          <img src="./top11-logo.png" alt="" className="brand-logo" />
+          <img src={imagesPath.brand} alt="Brand Logo" className="brand-logo" />
         </div>
 
         <form autoComplete="off" noValidate onSubmit={handleSubmit}>
