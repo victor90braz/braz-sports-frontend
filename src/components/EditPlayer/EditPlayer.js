@@ -44,7 +44,7 @@ const EditPlayer = () => {
     <EditPlayerStyle>
       <form autoComplete="off" noValidate onSubmit={submitEdit}>
         <fieldset>
-          <legend>Edit</legend>
+          <legend>Edit Player Card</legend>
           <div class="mb-3">
             <label htmlFor="sport" class="form-label">
               sport:
@@ -54,6 +54,19 @@ const EditPlayer = () => {
               id="sport"
               rows="3"
               value={valuePlayer.sport}
+              onChange={editPlayerData}
+            />
+          </div>
+
+          <div class="mb-3">
+            <label htmlFor="descriptionEvent" class="form-label">
+              descriptionEvent:
+            </label>
+            <input
+              class="form-control"
+              id="descriptionEvent"
+              rows="3"
+              value={valuePlayer.descriptionEvent}
               onChange={editPlayerData}
             />
           </div>
