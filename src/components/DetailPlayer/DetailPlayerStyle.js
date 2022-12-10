@@ -8,10 +8,16 @@ const DetailPlayerStyle = styled.div`
       display: flex;
       margin-top: auto;
       flex-direction: row;
-      justify-content: flex-start;
+      justify-content: space-between;
+      align-items: center;
       background: #21252961;
       color: black;
       padding: 10px;
+
+      .icon_edit,
+      .user-info {
+        cursor: pointer;
+      }
 
       .user-info {
         display: flex;
