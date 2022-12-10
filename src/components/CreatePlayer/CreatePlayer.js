@@ -30,8 +30,11 @@ const CreatePlayer = () => {
     formPlayer.email === "" ||
     formPlayer.loser === "" ||
     formPlayer.winner === "" ||
-    formPlayer.level === "";
-
+    formPlayer.level === "" ||
+    formPlayer.latitude === "" ||
+    formPlayer.longitude === "" ||
+    formPlayer.timeEvent === "" ||
+    formPlayer.contactNumber === "";
   const changePlayerData = (event) => {
     setFormPlayer({ ...formPlayer, [event.target.id]: event.target.value });
   };
@@ -49,9 +52,16 @@ const CreatePlayer = () => {
           username: formPlayer.username,
           name: formPlayer.name,
           email: formPlayer.email,
-          level: formPlayer.level,
           loser: formPlayer.loser,
           winner: formPlayer.winner,
+          level: formPlayer.level,
+          latitude: formPlayer.latitude,
+          longitude: formPlayer.longitude,
+          timeEvent: formPlayer.timeEvent,
+          contactNumber: formPlayer.contactNumber,
+          locationEvent: formPlayer.locationEvent,
+          province: formPlayer.province,
+          country: formPlayer.country,
         })
       );
 
@@ -149,17 +159,6 @@ const CreatePlayer = () => {
           required
         />
 
-        <label htmlFor="level">level</label>
-        <input
-          id="level"
-          type="text"
-          value={formPlayer.level}
-          onChange={changePlayerData}
-          className="inputbox"
-          name="level"
-          required
-        />
-
         <label htmlFor="loser">loser</label>
         <input
           id="loser"
@@ -179,6 +178,94 @@ const CreatePlayer = () => {
           onChange={changePlayerData}
           className="inputbox"
           name="winner"
+          required
+        />
+
+        <label htmlFor="level">level</label>
+        <input
+          id="level"
+          type="text"
+          value={formPlayer.level}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="level"
+          required
+        />
+
+        <label htmlFor="latitude">latitude</label>
+        <input
+          id="latitude"
+          type="text"
+          value={formPlayer.latitude}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="latitude"
+          required
+        />
+
+        <label htmlFor="longitude">longitude</label>
+        <input
+          id="longitude"
+          type="text"
+          value={formPlayer.longitude}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="longitude"
+          required
+        />
+
+        <label htmlFor="timeEvent">timeEvent</label>
+        <input
+          id="timeEvent"
+          type="time"
+          value={formPlayer.timeEvent}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="timeEvent"
+          required
+        />
+
+        <label htmlFor="contactNumber">contactNumber</label>
+        <input
+          id="contactNumber"
+          type="text"
+          value={formPlayer.contactNumber}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="contactNumber"
+          required
+        />
+
+        <label htmlFor="locationEvent">locationEvent</label>
+        <input
+          id="locationEvent"
+          type="text"
+          value={formPlayer.locationEvent}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="locationEvent"
+          required
+        />
+
+        <label htmlFor="province">province</label>
+        <input
+          id="province"
+          type="text"
+          value={formPlayer.province}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="province"
+          required
+        />
+
+        <label htmlFor="country">country</label>
+        <input
+          id="country"
+          type="text"
+          value={formPlayer.country}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="country"
           required
         />
 

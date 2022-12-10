@@ -16,6 +16,7 @@ import Perfil from "./components/Perfil/Perfil";
 import ListPlayers from "./components/ListPlayers/ListPlayers";
 import AppStyle from "./AppStyle";
 import EditPlayerPerfil from "./components/EditPlayerPerfil/EditPlayerPerfil";
+import EditDetailPlayer from "./components/EditDetailPlayer/EditDetailPlayer";
 
 function App() {
   const { logged } = useSelector((state) => state.user);
@@ -69,6 +70,15 @@ function App() {
           element={
             <AccessControl>
               <EditPlayerPerfil />
+            </AccessControl>
+          }
+        />
+
+        <Route
+          path="/editDetailPlayer/:playerId"
+          element={
+            <AccessControl>
+              <EditDetailPlayer />
             </AccessControl>
           }
         />

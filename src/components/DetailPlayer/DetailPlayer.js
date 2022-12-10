@@ -31,7 +31,7 @@ const DetailPlayer = () => {
 
   const handlePerfil = () => {
     dispatch(getPlayerThunk(id));
-    navigate(`/perfil/${id}`);
+    navigate(`/editDetailPlayer/${id}`);
   };
 
   return (
