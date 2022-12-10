@@ -46,7 +46,7 @@ const EditPlayerPerfil = () => {
     <EditPlayerPerfilStyle>
       <form autoComplete="off" noValidate onSubmit={submitEdit}>
         <fieldset>
-          <legend>Edit</legend>
+          <legend>Edit Player Perfil</legend>
           <div class="mb-3">
             <label htmlFor="image" class="form-label">
               image:
@@ -111,7 +111,7 @@ const EditPlayerPerfil = () => {
           </div>
 
           <button type="submit" className="button">
-            Set Perfil
+            Set Player Perfil
           </button>
         </fieldset>
       </form>
