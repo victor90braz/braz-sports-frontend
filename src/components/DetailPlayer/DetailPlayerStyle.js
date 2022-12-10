@@ -49,6 +49,16 @@ const DetailPlayerStyle = styled.div`
         padding: 5px;
       }
 
+      span,
+      a {
+        display: flex;
+        gap: 15px;
+
+        a {
+          color: black;
+        }
+      }
+
       .tag {
         background: #cccccc;
         border-radius: 50px;

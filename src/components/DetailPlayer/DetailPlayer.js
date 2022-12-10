@@ -61,9 +61,15 @@ const DetailPlayer = () => {
           </span>
 
           <span>
-            <GoLocation size={25} />
-            {allPlayers.locationEvent}, {allPlayers.province},
-            {allPlayers.country}
+            <a
+              href={allPlayers.linkLocation}
+              target={"_blank"}
+              rel="noreferrer"
+            >
+              <GoLocation size={25} />
+              {allPlayers.locationEvent}, {allPlayers.province},{" "}
+              {allPlayers.country}
+            </a>
           </span>
         </div>
         <GoogleMap />

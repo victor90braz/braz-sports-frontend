@@ -31,9 +31,12 @@ const EditDetailPlayer = () => {
           name: valuePlayer.name,
           sport: valuePlayer.sport,
           dateEvent: valuePlayer.dateEvent,
+          linkLocation: valuePlayer.linkLocation,
           locationEvent: valuePlayer.locationEvent,
           province: valuePlayer.province,
           country: valuePlayer.country,
+          latitude: valuePlayer.latitude,
+          longitude: valuePlayer.longitude,
         })
       );
 
@@ -55,7 +58,6 @@ const EditDetailPlayer = () => {
             <input
               className="form-control"
               id="image"
-              rows="3"
               value={valuePlayer.image}
               onChange={editPlayerData}
             />
@@ -69,7 +71,6 @@ const EditDetailPlayer = () => {
               type="text"
               className="form-control"
               id="name"
-              rows="3"
               value={valuePlayer.name}
               onChange={editPlayerData}
             />
@@ -84,6 +85,19 @@ const EditDetailPlayer = () => {
               className="form-control"
               id="dateEvent"
               value={valuePlayer.dateEvent}
+              onChange={editPlayerData}
+            />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="linkLocation" className="form-label">
+              linkLocation:
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="linkLocation"
+              value={valuePlayer.linkLocation}
               onChange={editPlayerData}
             />
           </div>
@@ -123,6 +137,32 @@ const EditDetailPlayer = () => {
               className="form-control"
               id="country"
               value={valuePlayer.country}
+              onChange={editPlayerData}
+            />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="latitude" className="form-label">
+              latitude:
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="latitude"
+              value={valuePlayer.latitude}
+              onChange={editPlayerData}
+            />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="longitude" className="form-label">
+              longitude:
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="longitude"
+              value={valuePlayer.longitude}
               onChange={editPlayerData}
             />
           </div>

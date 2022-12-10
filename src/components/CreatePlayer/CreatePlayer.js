@@ -81,7 +81,6 @@ const CreatePlayer = () => {
     <CreatePlayerStyle>
       <form autoComplete="off" noValidate onSubmit={submit}>
         <h1>Create Card Player</h1>
-
         <label htmlFor="sport">sport</label>
         <input
           id="sport"
@@ -92,7 +91,6 @@ const CreatePlayer = () => {
           name="sport"
           required
         />
-
         <label htmlFor="descriptionEvent">descriptionEvent</label>
         <input
           id="descriptionEvent"
@@ -103,7 +101,6 @@ const CreatePlayer = () => {
           name="descriptionEvent"
           required
         />
-
         <label htmlFor="dateEvent">dateEvent</label>
         <input
           id="dateEvent"
@@ -114,7 +111,6 @@ const CreatePlayer = () => {
           name="dateEvent"
           required
         />
-
         <label htmlFor="image">image</label>
         <input
           id="image"
@@ -125,7 +121,6 @@ const CreatePlayer = () => {
           name="image"
           required
         />
-
         <label htmlFor="username">username</label>
         <input
           id="username"
@@ -136,7 +131,6 @@ const CreatePlayer = () => {
           name="username"
           required
         />
-
         <label htmlFor="name">name</label>
         <input
           id="name"
@@ -147,7 +141,6 @@ const CreatePlayer = () => {
           name="name"
           required
         />
-
         <label htmlFor="email">email</label>
         <input
           id="email"
@@ -158,7 +151,6 @@ const CreatePlayer = () => {
           name="email"
           required
         />
-
         <label htmlFor="loser">loser</label>
         <input
           id="loser"
@@ -169,7 +161,6 @@ const CreatePlayer = () => {
           name="loser"
           required
         />
-
         <label htmlFor="winner">winner</label>
         <input
           id="winner"
@@ -180,7 +171,6 @@ const CreatePlayer = () => {
           name="winner"
           required
         />
-
         <label htmlFor="level">level</label>
         <input
           id="level"
@@ -191,7 +181,6 @@ const CreatePlayer = () => {
           name="level"
           required
         />
-
         <label htmlFor="latitude">latitude</label>
         <input
           id="latitude"
@@ -202,7 +191,6 @@ const CreatePlayer = () => {
           name="latitude"
           required
         />
-
         <label htmlFor="longitude">longitude</label>
         <input
           id="longitude"
@@ -213,7 +201,6 @@ const CreatePlayer = () => {
           name="longitude"
           required
         />
-
         <label htmlFor="timeEvent">timeEvent</label>
         <input
           id="timeEvent"
@@ -224,7 +211,6 @@ const CreatePlayer = () => {
           name="timeEvent"
           required
         />
-
         <label htmlFor="contactNumber">contactNumber</label>
         <input
           id="contactNumber"
@@ -233,6 +219,17 @@ const CreatePlayer = () => {
           onChange={changePlayerData}
           className="inputbox"
           name="contactNumber"
+          required
+        />
+
+        <label htmlFor="linkLocation">linkLocation</label>
+        <input
+          id="linkLocation"
+          type="text"
+          value={formPlayer.linkLocation}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="linkLocation"
           required
         />
 
@@ -246,7 +243,6 @@ const CreatePlayer = () => {
           name="locationEvent"
           required
         />
-
         <label htmlFor="province">province</label>
         <input
           id="province"
@@ -257,7 +253,6 @@ const CreatePlayer = () => {
           name="province"
           required
         />
-
         <label htmlFor="country">country</label>
         <input
           id="country"
@@ -268,7 +263,6 @@ const CreatePlayer = () => {
           name="country"
           required
         />
-
         <button disabled={buttonDisabled} type="submit" className="button">
           Create Event
         </button>
