@@ -134,7 +134,7 @@ const EditPlayer = () => {
             />
           </div>
           <button type="submit" className="button">
-            Set Player
+            Set Player Card
           </button>
         </fieldset>
       </form>
