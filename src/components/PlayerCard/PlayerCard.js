@@ -10,7 +10,7 @@ import { FiEdit } from "react-icons/fi";
 import { BsCalendarDate } from "react-icons/bs";
 
 const PlayerCard = ({
-  player: { id, descriptionEvent, dateEvent, image, name },
+  player: { id, sport, descriptionEvent, dateEvent, image, username },
 }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -35,7 +35,7 @@ const PlayerCard = ({
       <div className="container">
         <section className="wrapper" onClick={handlePerfil}>
           <div className="card-body">
-            <h2 className="card-meta mb-2">Beach Volley</h2>
+            <h2 className="card-meta mb-2">{sport}</h2>
             <h1 className="card-title mt-0 ">{descriptionEvent}</h1>
 
             <p className="location-container">
@@ -53,7 +53,7 @@ const PlayerCard = ({
               />
 
               <div className="media-body">
-                <h2 className="my-0 text-white d-block">{name}</h2>
+                <h2 className="my-0 text-white d-block">{username}</h2>
                 <small>Organizer</small>
               </div>
             </div>

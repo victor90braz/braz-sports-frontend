@@ -15,6 +15,7 @@ import { loadPlayersThunk } from "./redux/thunks/playersThunks";
 import Perfil from "./components/Perfil/Perfil";
 import ListPlayers from "./components/ListPlayers/ListPlayers";
 import AppStyle from "./AppStyle";
+import EditPlayerPerfil from "./components/EditPlayerPerfil/EditPlayerPerfil";
 
 function App() {
   const { logged } = useSelector((state) => state.user);
@@ -59,6 +60,15 @@ function App() {
           element={
             <AccessControl>
               <EditPage />
+            </AccessControl>
+          }
+        />
+
+        <Route
+          path="/editPerfil/:playerId"
+          element={
+            <AccessControl>
+              <EditPlayerPerfil />
             </AccessControl>
           }
         />

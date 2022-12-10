@@ -3,6 +3,7 @@ import { getPlayerThunk } from "../../redux/thunks/playersThunks";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { FiEdit } from "react-icons/fi";
 
 const Perfil = () => {
   const { id } = useParams();
@@ -16,6 +17,10 @@ const Perfil = () => {
 
   const handleDetail = () => {
     navigate(`/detail/${id}`);
+  };
+
+  const handleEdit = () => {
+    navigate(`/editPerfil/${id}`);
   };
 
   return (
@@ -56,6 +61,9 @@ const Perfil = () => {
 
           <button className="btn draw-border" onClick={handleDetail}>
             EVENT DETAIL
+          </button>
+          <button className="btn draw-border" onClick={handleEdit}>
+            <FiEdit size={30} className="icon_edit" />
           </button>
         </div>
       </div>

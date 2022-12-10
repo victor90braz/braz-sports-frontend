@@ -24,16 +24,16 @@ const DetailPlayer = () => {
 
   return (
     <DetailPlayerStyle>
-      <div class="card">
-        <div class="user">
-          <div class="user-info">
+      <div className="card">
+        <div className="user">
+          <div className="user-info">
             <img src={allPlayers.image} alt="user" />
             <h5>{allPlayers.name}</h5>
           </div>
         </div>
 
-        <div class="card-body">
-          <span class="tag tag-teal">Volley</span>
+        <div className="card-body">
+          <span className="tag tag-teal">Volley</span>
           <h4>{allPlayers.descriptionEvent}</h4>
 
           <span>

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { createrThunk } from "../../redux/thunks/playersThunks";
-import { MdImageSearch, MdOndemandVideo } from "react-icons/md";
 import CreatePlayerStyle from "./CreatePlayerStyle";
 import { correctAction, wrongAction } from "../../modals/modals";
 
@@ -11,33 +10,27 @@ const CreatePlayer = () => {
   const navigate = useNavigate();
 
   const blankFields = {
-    name: "",
-    nationality: "",
-    perfil: "",
-    video: "",
+    sport: "",
+    descriptionEvent: "",
+    dateEvent: "",
     image: "",
-    speed: "",
-    shoot: "",
-    pass: "",
-    agility: "",
-    defense: "",
-    strength: "",
+    username: "",
+    name: "",
   };
 
   const [formPlayer, setFormPlayer] = useState(blankFields);
 
   const buttonDisabled =
-    formPlayer.name === "" ||
-    formPlayer.nationality === "" ||
-    formPlayer.perfil === "" ||
-    formPlayer.video === "" ||
+    formPlayer.sport === "" ||
+    formPlayer.descriptionEvent === "" ||
+    formPlayer.dateEvent === "" ||
     formPlayer.image === "" ||
-    formPlayer.speed === "" ||
-    formPlayer.shoot === "" ||
-    formPlayer.pass === "" ||
-    formPlayer.agility === "" ||
-    formPlayer.defense === "" ||
-    formPlayer.strength === "";
+    formPlayer.username === "" ||
+    formPlayer.name === "" ||
+    formPlayer.email === "" ||
+    formPlayer.loser === "" ||
+    formPlayer.winner === "" ||
+    formPlayer.level === "";
 
   const changePlayerData = (event) => {
     setFormPlayer({ ...formPlayer, [event.target.id]: event.target.value });
@@ -49,22 +42,23 @@ const CreatePlayer = () => {
 
       dispatch(
         createrThunk({
-          name: formPlayer.name,
-          nationality: formPlayer.nationality,
-          perfil: formPlayer.perfil,
-          video: formPlayer.video,
+          sport: formPlayer.sport,
+          descriptionEvent: formPlayer.descriptionEvent,
+          dateEvent: formPlayer.dateEvent,
           image: formPlayer.image,
-          speed: formPlayer.speed,
-          shoot: formPlayer.shoot,
-          pass: formPlayer.pass,
-          agility: formPlayer.agility,
-          defense: formPlayer.defense,
-          strength: formPlayer.strength,
+          username: formPlayer.username,
+          name: formPlayer.name,
+          email: formPlayer.email,
+          level: formPlayer.level,
+          loser: formPlayer.loser,
+          winner: formPlayer.winner,
         })
       );
 
       setFormPlayer(blankFields);
-      correctAction(`Greate, ${formPlayer.name} has been added in the list.`);
+      correctAction(
+        `Greate, ${formPlayer.username} has been added in the list.`
+      );
       navigate("/home");
     } catch (error) {
       wrongAction(
@@ -78,7 +72,62 @@ const CreatePlayer = () => {
       <form autoComplete="off" noValidate onSubmit={submit}>
         <h1>Create Player</h1>
 
-        <label htmlFor="name">Name</label>
+        <label htmlFor="sport">sport</label>
+        <input
+          id="sport"
+          type="text"
+          value={formPlayer.sport}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="sport"
+          required
+        />
+
+        <label htmlFor="descriptionEvent">descriptionEvent</label>
+        <input
+          id="descriptionEvent"
+          type="text"
+          value={formPlayer.descriptionEvent}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="descriptionEvent"
+          required
+        />
+
+        <label htmlFor="dateEvent">dateEvent</label>
+        <input
+          id="dateEvent"
+          type="date"
+          value={formPlayer.dateEvent}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="dateEvent"
+          required
+        />
+
+        <label htmlFor="image">image</label>
+        <input
+          id="image"
+          type="text"
+          value={formPlayer.image}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="image"
+          required
+        />
+
+        <label htmlFor="username">username</label>
+        <input
+          id="username"
+          type="text"
+          value={formPlayer.username}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="username"
+          required
+        />
+
+        <label htmlFor="name">name</label>
         <input
           id="name"
           type="text"
@@ -88,169 +137,53 @@ const CreatePlayer = () => {
           name="name"
           required
         />
-        <label htmlFor="nationality">Nationality</label>
+
+        <label htmlFor="email">email</label>
         <input
-          id="nationality"
+          id="email"
           type="text"
-          value={formPlayer.nationality}
+          value={formPlayer.email}
           onChange={changePlayerData}
           className="inputbox"
-          name="nationality"
-          required
-        />
-        <label htmlFor="image">
-          <a
-            href="https://www.futwiz.com/en/fifa22/custom-player"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <MdImageSearch size={40} className="icon" />
-            FIFA 22 Custom Card
-          </a>
-        </label>
-
-        <input
-          id="image"
-          type="url"
-          value={formPlayer.image}
-          onChange={changePlayerData}
-          className="inputbox"
-          name="image"
-          placeholder="Paste the URL image here..."
+          name="email"
           required
         />
 
-        <label htmlFor="video">
-          <a
-            href="https://www.youtube.com/watch?v=VMNGga0644w&ab_channel=100%25Atualizado"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <MdOndemandVideo size={40} className="icon" />
-            YouTube
-          </a>
-        </label>
-
+        <label htmlFor="level">level</label>
         <input
-          id="video"
+          id="level"
           type="text"
-          value={formPlayer.video}
+          value={formPlayer.level}
           onChange={changePlayerData}
           className="inputbox"
-          name="video"
+          name="level"
           required
-          placeholder="Ex: 6zQy_O3NoJU"
         />
 
-        <label htmlFor="perfil">Perfil</label>
-        <textarea
-          id="perfil"
-          value={formPlayer.perfil}
+        <label htmlFor="loser">loser</label>
+        <input
+          id="loser"
+          type="text"
+          value={formPlayer.loser}
           onChange={changePlayerData}
           className="inputbox"
-          name="perfil"
+          name="loser"
           required
-          rows="6"
-          cols="50"
         />
 
-        <h3>Player Skills</h3>
-
-        <ul className="container-inputs">
-          <li>
-            <label htmlFor="speed">Speed</label>
-            <input
-              id="speed"
-              type="range"
-              value={formPlayer.speed}
-              onChange={changePlayerData}
-              className="inputbox"
-              name="speed"
-              min="0"
-              max="99"
-              required
-            />
-            <output id="speed">{formPlayer.speed}</output>
-          </li>
-          <li>
-            <label htmlFor="shoot">Shoot</label>
-            <input
-              id="shoot"
-              type="range"
-              value={formPlayer.shoot}
-              onChange={changePlayerData}
-              className="inputbox"
-              name="shoot"
-              min="0"
-              max="99"
-              required
-            />
-            <output id="shoot">{formPlayer.shoot}</output>
-          </li>
-          <li>
-            <label htmlFor="pass">Pass</label>
-            <input
-              id="pass"
-              type="range"
-              value={formPlayer.pass}
-              onChange={changePlayerData}
-              className="inputbox"
-              name="pass"
-              min="0"
-              max="99"
-              required
-            />
-            <output id="pass">{formPlayer.pass}</output>
-          </li>
-          <li>
-            <label htmlFor="agility">Agility</label>
-            <input
-              id="agility"
-              type="range"
-              value={formPlayer.agility}
-              onChange={changePlayerData}
-              className="inputbox"
-              name="agility"
-              min="0"
-              max="99"
-              required
-            />
-            <output id="agility">{formPlayer.agility}</output>
-          </li>
-          <li>
-            <label htmlFor="defense">Defense</label>
-            <input
-              id="defense"
-              type="range"
-              value={formPlayer.defense}
-              onChange={changePlayerData}
-              className="inputbox"
-              name="defense"
-              min="0"
-              max="99"
-              required
-            />
-            <output id="defense">{formPlayer.defense}</output>
-          </li>
-          <li>
-            <label htmlFor="strength">Strength</label>
-            <input
-              id="strength"
-              type="range"
-              value={formPlayer.strength}
-              onChange={changePlayerData}
-              className="inputbox"
-              name="strength"
-              min="0"
-              max="99"
-              required
-            />
-            <output id="strength">{formPlayer.strength}</output>
-          </li>
-        </ul>
+        <label htmlFor="winner">winner</label>
+        <input
+          id="winner"
+          type="text"
+          value={formPlayer.winner}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="winner"
+          required
+        />
 
         <button disabled={buttonDisabled} type="submit" className="button">
-          Add New Player
+          Create Event
         </button>
       </form>
     </CreatePlayerStyle>

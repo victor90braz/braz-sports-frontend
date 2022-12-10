@@ -11,7 +11,6 @@ const GoogleMap = () => {
   const { player } = useSelector((state) => state.player);
   const dispatch = useDispatch();
   const positionEvent = [player.latitude, player.longitude];
-  console.log(positionEvent);
 
   useEffect(() => {
     dispatch(getPlayerThunk(id));

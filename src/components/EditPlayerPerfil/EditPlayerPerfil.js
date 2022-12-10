@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { correctAction } from "../../modals/modals";
 import { editPlayerThunk } from "../../redux/thunks/playersThunks";
-import EditPlayerStyle from "./EditPlayerStyle";
+import EditPlayerPerfilStyle from "./EditPlayerPerfilStyle";
 
-const EditPlayer = () => {
+const EditPlayerPerfil = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -27,106 +27,96 @@ const EditPlayer = () => {
     if (player) {
       dispatch(
         editPlayerThunk(valuePlayer.id, {
-          sport: valuePlayer.sport,
-          descriptionEvent: valuePlayer.descriptionEvent,
-          dateEvent: valuePlayer.dateEvent,
           image: valuePlayer.image,
-          username: valuePlayer.username,
+          name: valuePlayer.name,
+          level: valuePlayer.level,
+          loser: valuePlayer.loser,
+          winner: valuePlayer.winner,
         })
       );
 
-      correctAction(`${valuePlayer.username} has been edited successfully`);
+      correctAction(
+        `Perfil of ${valuePlayer.username} has been edited successfully`
+      );
       navigate("/home");
     }
   };
 
   return (
-    <EditPlayerStyle>
+    <EditPlayerPerfilStyle>
       <form autoComplete="off" noValidate onSubmit={submitEdit}>
         <fieldset>
           <legend>Edit</legend>
           <div class="mb-3">
-            <label htmlFor="sport" class="form-label">
-              sport:
+            <label htmlFor="image" class="form-label">
+              image:
             </label>
             <input
               class="form-control"
-              id="sport"
+              id="image"
               rows="3"
-              value={valuePlayer.sport}
+              value={valuePlayer.image}
               onChange={editPlayerData}
             />
           </div>
 
-          <label htmlFor="dateEvent" class="form-label">
-            dateEvent:
+          <label htmlFor="name" class="form-label">
+            name:
           </label>
           <input
-            type={"date"}
+            type="text"
             class="form-control"
-            id="dateEvent"
+            id="name"
             rows="3"
-            value={valuePlayer.dateEvent}
+            value={valuePlayer.name}
             onChange={editPlayerData}
           />
 
           <div class="mb-3">
-            <label htmlFor="image" class="form-label">
-              image:
+            <label htmlFor="level" class="form-label">
+              level:
             </label>
             <textarea
               type="text"
               class="form-control"
-              id="image"
-              value={valuePlayer.image}
+              id="level"
+              value={valuePlayer.level}
               onChange={editPlayerData}
             />
           </div>
 
           <div class="mb-3">
-            <label htmlFor="timeEvent" class="form-label">
-              time:
-            </label>
-            <input
-              type="time"
-              class="form-control"
-              id="timeEvent"
-              value={valuePlayer.time}
-              onChange={editPlayerData}
-            />
-          </div>
-          <div class="mb-3">
-            <label htmlFor="image" class="form-label">
-              Image:
+            <label htmlFor="loser" class="form-label">
+              loser:
             </label>
             <input
               type="text"
               class="form-control"
-              id="image"
-              value={valuePlayer.image}
+              id="loser"
+              value={valuePlayer.loser}
+              onChange={editPlayerData}
+            />
+          </div>
+          <div class="mb-3">
+            <label htmlFor="winner" class="form-label">
+              winner:
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="winner"
+              value={valuePlayer.winner}
               onChange={editPlayerData}
             />
           </div>
 
-          <div class="mb-3">
-            <label htmlFor="username" class="form-label">
-              username:
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="username"
-              value={valuePlayer.username}
-              onChange={editPlayerData}
-            />
-          </div>
           <button type="submit" className="button">
-            Set Player
+            Set Perfil
           </button>
         </fieldset>
       </form>
-    </EditPlayerStyle>
+    </EditPlayerPerfilStyle>
   );
 };
 
-export default EditPlayer;
+export default EditPlayerPerfil;
