@@ -4,6 +4,7 @@ const CreatePlayerStyle = styled.div`
   form {
     display: flex;
     flex-direction: column;
+    margin: 10px;
   }
 
   button {
