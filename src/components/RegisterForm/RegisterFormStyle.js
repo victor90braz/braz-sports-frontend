@@ -63,10 +63,6 @@ const RegisterFormStyle = styled.div`
     margin: 15px;
   }
 
-  label:nth-of-type(2) {
-    margin-top: 12px;
-  }
-
   input::placeholder {
     color: gray;
   }
@@ -85,11 +81,12 @@ const RegisterFormStyle = styled.div`
     color: white;
     margin-top: 20px;
     background: #1da1f2;
-    height: 40px;
     border-radius: 20px;
     cursor: pointer;
     font-weight: 900;
     transition: 0.5s;
+    padding: 20px;
+    margin-top: 30px;
   }
 
   button:hover {
