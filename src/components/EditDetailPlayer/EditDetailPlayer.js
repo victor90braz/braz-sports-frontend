@@ -90,6 +90,19 @@ const EditDetailPlayer = () => {
           </div>
 
           <div className="mb-3">
+            <label htmlFor="timeEvent" className="form-label">
+              timeEvent:
+            </label>
+            <input
+              type="time"
+              className="form-control"
+              id="timeEvent"
+              value={valuePlayer.timeEvent}
+              onChange={editPlayerData}
+            />
+          </div>
+
+          <div className="mb-3">
             <label htmlFor="linkLocation" className="form-label">
               linkLocation:
             </label>
