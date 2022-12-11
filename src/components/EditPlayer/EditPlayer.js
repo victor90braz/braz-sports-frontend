@@ -42,102 +42,104 @@ const EditPlayer = () => {
 
   return (
     <EditPlayerStyle>
-      <form autoComplete="off" noValidate onSubmit={submitEdit}>
-        <fieldset>
-          <legend>Edit Player Card</legend>
-          <div className="mb-3">
-            <label htmlFor="sport" className="form-label">
-              sport:
+      <div className="container">
+        <form autoComplete="off" noValidate onSubmit={submitEdit}>
+          <fieldset>
+            <legend>Edit Player Card</legend>
+            <div className="mb-3">
+              <label htmlFor="sport" className="form-label">
+                sport:
+              </label>
+              <input
+                className="form-control"
+                id="sport"
+                rows="3"
+                value={valuePlayer.sport}
+                onChange={editPlayerData}
+              />
+            </div>
+
+            <div className="mb-3">
+              <label htmlFor="descriptionEvent" className="form-label">
+                descriptionEvent:
+              </label>
+              <input
+                className="form-control"
+                id="descriptionEvent"
+                rows="3"
+                value={valuePlayer.descriptionEvent}
+                onChange={editPlayerData}
+              />
+            </div>
+
+            <label htmlFor="dateEvent" className="form-label">
+              dateEvent:
             </label>
             <input
+              type={"date"}
               className="form-control"
-              id="sport"
+              id="dateEvent"
               rows="3"
-              value={valuePlayer.sport}
+              value={valuePlayer.dateEvent}
               onChange={editPlayerData}
             />
-          </div>
 
-          <div className="mb-3">
-            <label htmlFor="descriptionEvent" className="form-label">
-              descriptionEvent:
-            </label>
-            <input
-              className="form-control"
-              id="descriptionEvent"
-              rows="3"
-              value={valuePlayer.descriptionEvent}
-              onChange={editPlayerData}
-            />
-          </div>
+            <div className="mb-3">
+              <label htmlFor="image" className="form-label">
+                image:
+              </label>
+              <textarea
+                type="text"
+                className="form-control"
+                id="image"
+                value={valuePlayer.image}
+                onChange={editPlayerData}
+              />
+            </div>
 
-          <label htmlFor="dateEvent" className="form-label">
-            dateEvent:
-          </label>
-          <input
-            type={"date"}
-            className="form-control"
-            id="dateEvent"
-            rows="3"
-            value={valuePlayer.dateEvent}
-            onChange={editPlayerData}
-          />
+            <div className="mb-3">
+              <label htmlFor="timeEvent" className="form-label">
+                time:
+              </label>
+              <input
+                type="time"
+                className="form-control"
+                id="timeEvent"
+                value={valuePlayer.time}
+                onChange={editPlayerData}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="image" className="form-label">
+                Image:
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="image"
+                value={valuePlayer.image}
+                onChange={editPlayerData}
+              />
+            </div>
 
-          <div className="mb-3">
-            <label htmlFor="image" className="form-label">
-              image:
-            </label>
-            <textarea
-              type="text"
-              className="form-control"
-              id="image"
-              value={valuePlayer.image}
-              onChange={editPlayerData}
-            />
-          </div>
-
-          <div className="mb-3">
-            <label htmlFor="timeEvent" className="form-label">
-              time:
-            </label>
-            <input
-              type="time"
-              className="form-control"
-              id="timeEvent"
-              value={valuePlayer.time}
-              onChange={editPlayerData}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="image" className="form-label">
-              Image:
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="image"
-              value={valuePlayer.image}
-              onChange={editPlayerData}
-            />
-          </div>
-
-          <div className="mb-3">
-            <label htmlFor="username" className="form-label">
-              username:
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="username"
-              value={valuePlayer.username}
-              onChange={editPlayerData}
-            />
-          </div>
-          <button type="submit" className="button">
-            Set Player Card
-          </button>
-        </fieldset>
-      </form>
+            <div className="mb-3">
+              <label htmlFor="username" className="form-label">
+                username:
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="username"
+                value={valuePlayer.username}
+                onChange={editPlayerData}
+              />
+            </div>
+            <button type="submit" className="button">
+              Set Player Card
+            </button>
+          </fieldset>
+        </form>
+      </div>
     </EditPlayerStyle>
   );
 };

@@ -26,7 +26,7 @@ const DetailPlayer = () => {
 
   const handleEdit = () => {
     dispatch(getPlayerThunk(id));
-    navigate(`/edit/${id}`);
+    navigate(`/editDetailPlayer/${id}`);
   };
 
   const handlePerfil = () => {
@@ -37,13 +37,13 @@ const DetailPlayer = () => {
   return (
     <DetailPlayerStyle>
       <div className="card">
-        <div className="user" onClick={handlePerfil}>
-          <div className="user-info">
+        <div className="user">
+          <div className="user-info" onClick={handlePerfil}>
             <img src={allPlayers.image} alt="user" />
             <h5>{allPlayers.name}</h5>
           </div>
-          <span>
-            <FiEdit size={30} onClick={handleEdit} className="icon_edit" />
+          <span onClick={handleEdit}>
+            <FiEdit size={30} className="icon_edit" />
           </span>
         </div>
         <div className="card-body">

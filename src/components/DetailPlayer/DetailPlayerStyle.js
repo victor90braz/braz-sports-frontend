@@ -62,16 +62,23 @@ const DetailPlayerStyle = styled.div`
       .tag {
         background: #cccccc;
         border-radius: 50px;
-        font-size: 12px;
+        font-size: 1em;
         margin: 0;
         color: #fff;
         padding: 6px 10px;
-        text-transform: uppercase;
+
         cursor: pointer;
       }
       .tag-teal {
         background-color: #47bcd4;
       }
+    }
+
+    .tag,
+    h5,
+    span,
+    h4 {
+      text-transform: uppercase;
     }
   }
 `;

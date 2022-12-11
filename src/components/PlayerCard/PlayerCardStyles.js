@@ -22,8 +22,9 @@ const PlayerCardStyles = styled.div`
   }
 
   .wrapper:hover {
-    background: #f01c1c;
     cursor: pointer;
+    border: 1px solid;
+    border-radius: 2em;
   }
 
   .card-body,
