@@ -1,35 +1,20 @@
 import styled from "styled-components";
 
 const LoginFormStyle = styled.div`
-  input {
-    caret-color: red;
-  }
-
-  body {
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #ecf0f3;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    place-items: center;
-    overflow: hidden;
-    font-family: poppins;
-  }
-
   .container {
     position: relative;
-    width: 400px;
+    width: 350px;
     border-radius: 20px;
-    padding: 40px;
     box-sizing: border-box;
     background: #084298;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  input {
+    caret-color: red;
   }
 
   .brand-logo {
