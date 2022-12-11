@@ -45,12 +45,12 @@ const EditPlayer = () => {
       <form autoComplete="off" noValidate onSubmit={submitEdit}>
         <fieldset>
           <legend>Edit Player Card</legend>
-          <div class="mb-3">
-            <label htmlFor="sport" class="form-label">
+          <div className="mb-3">
+            <label htmlFor="sport" className="form-label">
               sport:
             </label>
             <input
-              class="form-control"
+              className="form-control"
               id="sport"
               rows="3"
               value={valuePlayer.sport}
@@ -58,12 +58,12 @@ const EditPlayer = () => {
             />
           </div>
 
-          <div class="mb-3">
-            <label htmlFor="descriptionEvent" class="form-label">
+          <div className="mb-3">
+            <label htmlFor="descriptionEvent" className="form-label">
               descriptionEvent:
             </label>
             <input
-              class="form-control"
+              className="form-control"
               id="descriptionEvent"
               rows="3"
               value={valuePlayer.descriptionEvent}
@@ -71,69 +71,69 @@ const EditPlayer = () => {
             />
           </div>
 
-          <label htmlFor="dateEvent" class="form-label">
+          <label htmlFor="dateEvent" className="form-label">
             dateEvent:
           </label>
           <input
             type={"date"}
-            class="form-control"
+            className="form-control"
             id="dateEvent"
             rows="3"
             value={valuePlayer.dateEvent}
             onChange={editPlayerData}
           />
 
-          <div class="mb-3">
-            <label htmlFor="image" class="form-label">
+          <div className="mb-3">
+            <label htmlFor="image" className="form-label">
               image:
             </label>
             <textarea
               type="text"
-              class="form-control"
+              className="form-control"
               id="image"
               value={valuePlayer.image}
               onChange={editPlayerData}
             />
           </div>
 
-          <div class="mb-3">
-            <label htmlFor="timeEvent" class="form-label">
+          <div className="mb-3">
+            <label htmlFor="timeEvent" className="form-label">
               time:
             </label>
             <input
               type="time"
-              class="form-control"
+              className="form-control"
               id="timeEvent"
               value={valuePlayer.time}
               onChange={editPlayerData}
             />
           </div>
-          <div class="mb-3">
-            <label htmlFor="image" class="form-label">
+          <div className="mb-3">
+            <label htmlFor="image" className="form-label">
               Image:
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="image"
               value={valuePlayer.image}
               onChange={editPlayerData}
             />
           </div>
 
-          <div class="mb-3">
-            <label htmlFor="username" class="form-label">
+          <div className="mb-3">
+            <label htmlFor="username" className="form-label">
               username:
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="username"
               value={valuePlayer.username}
               onChange={editPlayerData}
             />
           </div>
-          <button type="submit" className="button">
+          <button type="submit" classNameName="button">
             Set Player Card
           </button>
         </fieldset>
