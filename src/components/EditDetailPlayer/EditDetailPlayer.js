@@ -31,6 +31,7 @@ const EditDetailPlayer = () => {
           name: valuePlayer.name,
           sport: valuePlayer.sport,
           dateEvent: valuePlayer.dateEvent,
+          timeEvent: valuePlayer.timeEvent,
           linkLocation: valuePlayer.linkLocation,
           locationEvent: valuePlayer.locationEvent,
           province: valuePlayer.province,
