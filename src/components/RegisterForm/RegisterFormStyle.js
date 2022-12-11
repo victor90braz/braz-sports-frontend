@@ -18,8 +18,8 @@ const RegisterFormStyle = styled.div`
   }
 
   .brand-logo {
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     margin: auto;
     display: block;
     border-radius: 50%;
@@ -46,7 +46,6 @@ const RegisterFormStyle = styled.div`
 
   .inputs {
     text-align: left;
-    margin-top: 30px;
   }
 
   label,
@@ -61,7 +60,7 @@ const RegisterFormStyle = styled.div`
   }
 
   label {
-    margin-bottom: 4px;
+    margin: 15px;
   }
 
   label:nth-of-type(2) {
