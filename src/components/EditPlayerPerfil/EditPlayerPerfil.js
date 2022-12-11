@@ -48,11 +48,11 @@ const EditPlayerPerfil = () => {
         <fieldset>
           <legend>Edit Player Perfil</legend>
           <div class="mb-3">
-            <label htmlFor="image" class="form-label">
+            <label htmlFor="image" className="form-label">
               image:
             </label>
             <input
-              class="form-control"
+              className="form-control"
               id="image"
               rows="3"
               value={valuePlayer.image}
@@ -60,45 +60,45 @@ const EditPlayerPerfil = () => {
             />
           </div>
 
-          <label htmlFor="name" class="form-label">
+          <label htmlFor="name" className="form-label">
             name:
           </label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="name"
             rows="3"
             value={valuePlayer.name}
             onChange={editPlayerData}
           />
 
-          <div class="mb-3">
-            <label htmlFor="level" class="form-label">
+          <div className="mb-3">
+            <label htmlFor="level" className="form-label">
               level:
             </label>
             <textarea
               type="text"
-              class="form-control"
+              className="form-control"
               id="level"
               value={valuePlayer.level}
               onChange={editPlayerData}
             />
           </div>
 
-          <div class="mb-3">
-            <label htmlFor="loser" class="form-label">
+          <div className="mb-3">
+            <label htmlFor="loser" className="form-label">
               loser:
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="loser"
               value={valuePlayer.loser}
               onChange={editPlayerData}
             />
           </div>
-          <div class="mb-3">
-            <label htmlFor="winner" class="form-label">
+          <div className="mb-3">
+            <label htmlFor="winner" className="form-label">
               winner:
             </label>
             <input
