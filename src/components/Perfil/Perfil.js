@@ -4,6 +4,9 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { FiEdit } from "react-icons/fi";
+import { GrInstagram } from "react-icons/gr";
+import { AiOutlineLinkedin, AiFillTwitterCircle } from "react-icons/ai";
+import { DiGithubBadge } from "react-icons/di";
 
 const Perfil = () => {
   const { id } = useParams();
@@ -30,31 +33,25 @@ const Perfil = () => {
           <img src={player.image} alt="Person" className="card__image" />
           <p className="card__name">{player.name}</p>
           <p className="card__name">{player.level}</p>
-          <div className="grid-container">
-            <div className="grid-child-posts">{player.loser} Loser</div>
-            <div className="grid-child-followers">{player.winner} Winner</div>
-          </div>
-          <ul className="social-icons">
-            <li>
-              <a href="/#">
-                <i className="fa fa-instagram"></i>
-              </a>
-            </li>
-            <li>
-              <a href="/#">
-                <i className="fa fa-twitter"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/victor-braz/"
-                target={"_blank"}
-                rel="noreferrer"
-              >
-                <i className="fa-brands fa-linkedin"></i>
-              </a>
-            </li>
-          </ul>
+          <p className="card__name">{player.email}</p>
+          <p className="card__name">{player.contactNumber}</p>
+
+          <a href={player.instagram} target={"_blank"} rel="noreferrer">
+            <GrInstagram size={35} />
+          </a>
+
+          <a href={player.twitter} target={"_blank"} rel="noreferrer">
+            <AiFillTwitterCircle size={40} />
+          </a>
+
+          <a href={player.linkedin} target={"_blank"} rel="noreferrer">
+            <AiOutlineLinkedin size={40} />
+          </a>
+
+          <a href={player.github} target={"_blank"} rel="noreferrer">
+            <DiGithubBadge size={45} />
+          </a>
+
           <NavLink to="/create">
             <button className="btn draw-border">CREATE A NEW EVENT</button>
           </NavLink>

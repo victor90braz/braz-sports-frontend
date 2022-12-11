@@ -30,8 +30,8 @@ const EditPlayerPerfil = () => {
           image: valuePlayer.image,
           name: valuePlayer.name,
           level: valuePlayer.level,
-          loser: valuePlayer.loser,
-          winner: valuePlayer.winner,
+          email: valuePlayer.email,
+          contactNumber: valuePlayer.contactNumber,
         })
       );
 
@@ -47,7 +47,7 @@ const EditPlayerPerfil = () => {
       <form autoComplete="off" noValidate onSubmit={submitEdit}>
         <fieldset>
           <legend>Edit Player Perfil</legend>
-          <div class="mb-3">
+          <div className="mb-3">
             <label htmlFor="image" className="form-label">
               image:
             </label>
@@ -76,7 +76,7 @@ const EditPlayerPerfil = () => {
             <label htmlFor="level" className="form-label">
               level:
             </label>
-            <textarea
+            <input
               type="text"
               className="form-control"
               id="level"
@@ -86,26 +86,78 @@ const EditPlayerPerfil = () => {
           </div>
 
           <div className="mb-3">
-            <label htmlFor="loser" className="form-label">
-              loser:
+            <label htmlFor="email" className="form-label">
+              email:
             </label>
             <input
               type="text"
               className="form-control"
-              id="loser"
-              value={valuePlayer.loser}
+              id="email"
+              value={valuePlayer.email}
               onChange={editPlayerData}
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="winner" className="form-label">
-              winner:
+            <label htmlFor="contactNumber" className="form-label">
+              contactNumber:
             </label>
             <input
               type="text"
-              class="form-control"
-              id="winner"
-              value={valuePlayer.winner}
+              className="form-control"
+              id="contactNumber"
+              value={valuePlayer.contactNumber}
+              onChange={editPlayerData}
+            />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="instagram" className="form-label">
+              instagram:
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="instagram"
+              value={valuePlayer.instagram}
+              onChange={editPlayerData}
+            />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="twitter" className="form-label">
+              twitter:
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="twitter"
+              value={valuePlayer.twitter}
+              onChange={editPlayerData}
+            />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="linkedin" className="form-label">
+              linkedin:
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="linkedin"
+              value={valuePlayer.linkedin}
+              onChange={editPlayerData}
+            />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="github" className="form-label">
+              github:
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="github"
+              value={valuePlayer.github}
               onChange={editPlayerData}
             />
           </div>

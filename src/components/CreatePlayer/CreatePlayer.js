@@ -34,7 +34,14 @@ const CreatePlayer = () => {
     formPlayer.latitude === "" ||
     formPlayer.longitude === "" ||
     formPlayer.timeEvent === "" ||
-    formPlayer.contactNumber === "";
+    formPlayer.contactNumber === "" ||
+    formPlayer.locationEvent === "" ||
+    formPlayer.province === "" ||
+    formPlayer.country === "" ||
+    formPlayer.instagram === "" ||
+    formPlayer.twitter === "" ||
+    formPlayer.linkedin === "" ||
+    formPlayer.github === "";
   const changePlayerData = (event) => {
     setFormPlayer({ ...formPlayer, [event.target.id]: event.target.value });
   };
@@ -62,6 +69,10 @@ const CreatePlayer = () => {
           locationEvent: formPlayer.locationEvent,
           province: formPlayer.province,
           country: formPlayer.country,
+          instagram: formPlayer.instagram,
+          twitter: formPlayer.twitter,
+          linkedin: formPlayer.linkedin,
+          github: formPlayer.github,
         })
       );
 
@@ -114,7 +125,7 @@ const CreatePlayer = () => {
         <label htmlFor="image">image</label>
         <input
           id="image"
-          type="text"
+          type="url"
           value={formPlayer.image}
           onChange={changePlayerData}
           className="inputbox"
@@ -151,26 +162,7 @@ const CreatePlayer = () => {
           name="email"
           required
         />
-        <label htmlFor="loser">loser</label>
-        <input
-          id="loser"
-          type="text"
-          value={formPlayer.loser}
-          onChange={changePlayerData}
-          className="inputbox"
-          name="loser"
-          required
-        />
-        <label htmlFor="winner">winner</label>
-        <input
-          id="winner"
-          type="text"
-          value={formPlayer.winner}
-          onChange={changePlayerData}
-          className="inputbox"
-          name="winner"
-          required
-        />
+
         <label htmlFor="level">level</label>
         <input
           id="level"
@@ -261,6 +253,46 @@ const CreatePlayer = () => {
           onChange={changePlayerData}
           className="inputbox"
           name="country"
+          required
+        />
+        <label htmlFor="instagram">instagram</label>
+        <input
+          id="instagram"
+          type="text"
+          value={formPlayer.instagram}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="instagram"
+          required
+        />
+        <label htmlFor="twitter">twitter</label>
+        <input
+          id="twitter"
+          type="text"
+          value={formPlayer.twitter}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="twitter"
+          required
+        />
+        <label htmlFor="linkedin">linkedin</label>
+        <input
+          id="linkedin"
+          type="text"
+          value={formPlayer.linkedin}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="linkedin"
+          required
+        />
+        <label htmlFor="github">github</label>
+        <input
+          id="github"
+          type="text"
+          value={formPlayer.github}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="github"
           required
         />
         <button disabled={buttonDisabled} type="submit" className="button">
