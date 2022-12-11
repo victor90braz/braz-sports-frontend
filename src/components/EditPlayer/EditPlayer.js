@@ -133,7 +133,7 @@ const EditPlayer = () => {
               onChange={editPlayerData}
             />
           </div>
-          <button type="submit" classNameName="button">
+          <button type="submit" className="button">
             Set Player Card
           </button>
         </fieldset>
