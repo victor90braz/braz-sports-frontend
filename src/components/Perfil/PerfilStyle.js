@@ -9,6 +9,10 @@ const PerfilStyle = styled.div`
     margin-top: 20px;
   }
 
+  .container-perfil > * {
+    text-transform: uppercase;
+  }
+
   .card {
     background-color: #d4dbe538;
     display: flex;

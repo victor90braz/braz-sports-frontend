@@ -12,6 +12,10 @@ const PlayerCardStyles = styled.div`
   width: 400px;
   border-radius: 20px;
 
+  .wrapper > * {
+    text-transform: uppercase;
+  }
+
   .card-title {
     font-size: 1.3rem;
     margin-bottom: 10px;
