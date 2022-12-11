@@ -255,46 +255,7 @@ const CreatePlayer = () => {
           name="country"
           required
         />
-        <label htmlFor="instagram">instagram</label>
-        <input
-          id="instagram"
-          type="text"
-          value={formPlayer.instagram}
-          onChange={changePlayerData}
-          className="inputbox"
-          name="instagram"
-          required
-        />
-        <label htmlFor="twitter">twitter</label>
-        <input
-          id="twitter"
-          type="text"
-          value={formPlayer.twitter}
-          onChange={changePlayerData}
-          className="inputbox"
-          name="twitter"
-          required
-        />
-        <label htmlFor="linkedin">linkedin</label>
-        <input
-          id="linkedin"
-          type="text"
-          value={formPlayer.linkedin}
-          onChange={changePlayerData}
-          className="inputbox"
-          name="linkedin"
-          required
-        />
-        <label htmlFor="github">github</label>
-        <input
-          id="github"
-          type="text"
-          value={formPlayer.github}
-          onChange={changePlayerData}
-          className="inputbox"
-          name="github"
-          required
-        />
+
         <button disabled={buttonDisabled} type="submit" className="button">
           Create Event
         </button>

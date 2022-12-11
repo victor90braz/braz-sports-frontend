@@ -6,7 +6,7 @@ const MenuNavigateStyle = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  padding: 10px;
+  padding: 30px;
   width: 100%;
   font-size: 1.4em;
 
