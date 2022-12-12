@@ -6,6 +6,7 @@ const DetailPlayerStyle = styled.div`
     width: -webkit-fill-available;
     height: -webkit-fill-available;
     background-color: #47bcd4;
+    width: 40vw;
 
     .user {
       display: flex;
@@ -41,7 +42,7 @@ const DetailPlayerStyle = styled.div`
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
-      align-content: center;
+      align-content: flex-start;
       align-items: baseline;
 
       span,
@@ -79,6 +80,12 @@ const DetailPlayerStyle = styled.div`
     span,
     h4 {
       text-transform: uppercase;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .card {
+      width: 90vw;
     }
   }
 `;

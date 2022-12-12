@@ -50,7 +50,7 @@ const EditPlayerPerfil = () => {
             <legend>Edit Player Perfil</legend>
             <div className="mb-3">
               <label htmlFor="image" className="form-label">
-                image:
+                Image Url
               </label>
               <input
                 className="form-control"
@@ -63,7 +63,7 @@ const EditPlayerPerfil = () => {
 
             <div className="mb-3">
               <label htmlFor="name" className="form-label">
-                name:
+                Name
               </label>
               <input
                 type="text"
@@ -77,7 +77,7 @@ const EditPlayerPerfil = () => {
 
             <div className="mb-3">
               <label htmlFor="level" className="form-label">
-                level:
+                Your Level
               </label>
               <input
                 type="text"
@@ -90,7 +90,7 @@ const EditPlayerPerfil = () => {
 
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
-                email:
+                Email
               </label>
               <input
                 type="text"
@@ -103,7 +103,7 @@ const EditPlayerPerfil = () => {
 
             <div className="mb-3">
               <label htmlFor="contactNumber" className="form-label">
-                contactNumber:
+                Phone Number
               </label>
               <input
                 type="text"

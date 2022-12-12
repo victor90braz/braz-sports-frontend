@@ -30,12 +30,11 @@ const EditDetailPlayer = () => {
           image: valuePlayer.image,
           name: valuePlayer.name,
           sport: valuePlayer.sport,
+          descriptionEvent: valuePlayer.descriptionEvent,
           dateEvent: valuePlayer.dateEvent,
           timeEvent: valuePlayer.timeEvent,
           linkLocation: valuePlayer.linkLocation,
           locationEvent: valuePlayer.locationEvent,
-          province: valuePlayer.province,
-          country: valuePlayer.country,
           latitude: valuePlayer.latitude,
           longitude: valuePlayer.longitude,
         })
@@ -55,7 +54,7 @@ const EditDetailPlayer = () => {
 
             <div className="mb-3">
               <label htmlFor="image" className="form-label">
-                image:
+                Image Url
               </label>
               <input
                 className="form-control"
@@ -67,7 +66,7 @@ const EditDetailPlayer = () => {
 
             <div className="mb-3">
               <label htmlFor="name" className="form-label">
-                name:
+                Name
               </label>
               <input
                 type="text"
@@ -79,8 +78,34 @@ const EditDetailPlayer = () => {
             </div>
 
             <div className="mb-3">
+              <label htmlFor="sport" className="form-label">
+                Sport
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="sport"
+                value={valuePlayer.sport}
+                onChange={editPlayerData}
+              />
+            </div>
+
+            <div className="mb-3">
+              <label htmlFor="descriptionEvent" className="form-label">
+                Title Description
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="descriptionEvent"
+                value={valuePlayer.descriptionEvent}
+                onChange={editPlayerData}
+              />
+            </div>
+
+            <div className="mb-3">
               <label htmlFor="dateEvent" className="form-label">
-                dateEvent:
+                Date
               </label>
               <input
                 type="date"
@@ -93,7 +118,7 @@ const EditDetailPlayer = () => {
 
             <div className="mb-3">
               <label htmlFor="timeEvent" className="form-label">
-                timeEvent:
+                Time
               </label>
               <input
                 type="time"
@@ -106,7 +131,7 @@ const EditDetailPlayer = () => {
 
             <div className="mb-3">
               <label htmlFor="linkLocation" className="form-label">
-                link to share:
+                Location Link
               </label>
               <input
                 type="text"
@@ -120,7 +145,7 @@ const EditDetailPlayer = () => {
 
             <div className="mb-3">
               <label htmlFor="locationEvent" className="form-label">
-                locationEvent:
+                Address Place
               </label>
               <input
                 type="text"
@@ -132,34 +157,8 @@ const EditDetailPlayer = () => {
             </div>
 
             <div className="mb-3">
-              <label htmlFor="province" className="form-label">
-                province:
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="province"
-                value={valuePlayer.province}
-                onChange={editPlayerData}
-              />
-            </div>
-
-            <div className="mb-3">
-              <label htmlFor="country" className="form-label">
-                country:
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="country"
-                value={valuePlayer.country}
-                onChange={editPlayerData}
-              />
-            </div>
-
-            <div className="mb-3">
               <label htmlFor="latitude" className="form-label">
-                google map (latitude):
+                Location Map (LAT)
               </label>
               <input
                 type="text"
@@ -172,7 +171,7 @@ const EditDetailPlayer = () => {
 
             <div className="mb-3">
               <label htmlFor="longitude" className="form-label">
-                google map (longitude):
+                Location Map (LON)
               </label>
               <input
                 type="text"

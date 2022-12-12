@@ -67,12 +67,14 @@ const DetailPlayer = () => {
               rel="noreferrer"
             >
               <GoLocation size={25} />
-              {allPlayers.locationEvent}, {allPlayers.province},{" "}
-              {allPlayers.country}
+              {allPlayers.locationEvent}
             </a>
           </span>
         </div>
-        <GoogleMap />
+
+        <div className="card-footer">
+          <GoogleMap />
+        </div>
       </div>
     </DetailPlayerStyle>
   );

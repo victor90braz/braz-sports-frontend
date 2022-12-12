@@ -92,7 +92,7 @@ const CreatePlayer = () => {
     <CreatePlayerStyle>
       <form autoComplete="off" noValidate onSubmit={submit}>
         <h1>Create Card Player</h1>
-        <label htmlFor="sport">sport</label>
+        <label htmlFor="sport">Sport</label>
         <input
           id="sport"
           type="text"
@@ -102,7 +102,7 @@ const CreatePlayer = () => {
           name="sport"
           required
         />
-        <label htmlFor="descriptionEvent">descriptionEvent</label>
+        <label htmlFor="descriptionEvent">Title Description</label>
         <input
           id="descriptionEvent"
           type="text"
@@ -112,7 +112,7 @@ const CreatePlayer = () => {
           name="descriptionEvent"
           required
         />
-        <label htmlFor="dateEvent">dateEvent</label>
+        <label htmlFor="dateEvent">Date</label>
         <input
           id="dateEvent"
           type="date"
@@ -122,7 +122,7 @@ const CreatePlayer = () => {
           name="dateEvent"
           required
         />
-        <label htmlFor="image">image</label>
+        <label htmlFor="image">Image Url</label>
         <input
           id="image"
           type="url"
@@ -132,7 +132,7 @@ const CreatePlayer = () => {
           name="image"
           required
         />
-        <label htmlFor="username">username</label>
+        <label htmlFor="username">Username</label>
         <input
           id="username"
           type="text"
@@ -142,7 +142,7 @@ const CreatePlayer = () => {
           name="username"
           required
         />
-        <label htmlFor="name">name</label>
+        <label htmlFor="name">Name</label>
         <input
           id="name"
           type="text"
@@ -152,7 +152,7 @@ const CreatePlayer = () => {
           name="name"
           required
         />
-        <label htmlFor="email">email</label>
+        <label htmlFor="email">Email</label>
         <input
           id="email"
           type="text"
@@ -163,7 +163,7 @@ const CreatePlayer = () => {
           required
         />
 
-        <label htmlFor="level">level</label>
+        <label htmlFor="level">Your Level</label>
         <input
           id="level"
           type="text"
@@ -173,7 +173,7 @@ const CreatePlayer = () => {
           name="level"
           required
         />
-        <label htmlFor="latitude">latitude</label>
+        <label htmlFor="latitude">Location Map (LAT)</label>
         <input
           id="latitude"
           type="text"
@@ -183,7 +183,7 @@ const CreatePlayer = () => {
           name="latitude"
           required
         />
-        <label htmlFor="longitude">longitude</label>
+        <label htmlFor="longitude">Location Map (LON)</label>
         <input
           id="longitude"
           type="text"
@@ -193,7 +193,7 @@ const CreatePlayer = () => {
           name="longitude"
           required
         />
-        <label htmlFor="timeEvent">timeEvent</label>
+        <label htmlFor="timeEvent">Time</label>
         <input
           id="timeEvent"
           type="time"
@@ -203,7 +203,7 @@ const CreatePlayer = () => {
           name="timeEvent"
           required
         />
-        <label htmlFor="contactNumber">contactNumber</label>
+        <label htmlFor="contactNumber">Phone Number</label>
         <input
           id="contactNumber"
           type="text"
@@ -214,7 +214,7 @@ const CreatePlayer = () => {
           required
         />
 
-        <label htmlFor="linkLocation">linkLocation</label>
+        <label htmlFor="linkLocation">Share Location Link</label>
         <input
           id="linkLocation"
           type="text"
@@ -225,7 +225,7 @@ const CreatePlayer = () => {
           required
         />
 
-        <label htmlFor="locationEvent">locationEvent</label>
+        <label htmlFor="locationEvent">Address Place</label>
         <input
           id="locationEvent"
           type="text"
@@ -233,26 +233,6 @@ const CreatePlayer = () => {
           onChange={changePlayerData}
           className="inputbox"
           name="locationEvent"
-          required
-        />
-        <label htmlFor="province">province</label>
-        <input
-          id="province"
-          type="text"
-          value={formPlayer.province}
-          onChange={changePlayerData}
-          className="inputbox"
-          name="province"
-          required
-        />
-        <label htmlFor="country">country</label>
-        <input
-          id="country"
-          type="text"
-          value={formPlayer.country}
-          onChange={changePlayerData}
-          className="inputbox"
-          name="country"
           required
         />
 
