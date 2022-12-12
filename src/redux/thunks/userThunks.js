@@ -9,7 +9,7 @@ export const registerThunk = (userData) => async () => {
 };
 
 export const loginThunk = (userData) => async (dispatch) => {
-  const loginToast = toast.loading("Logging in...", { isLoading: true });
+  const loginToast = toast.loading("Loading...", { isLoading: true });
   try {
     const { data, status } = await axios.post(
       `${process.env.REACT_APP_API_URL}users/login`,
@@ -20,7 +20,7 @@ export const loginThunk = (userData) => async (dispatch) => {
       const { id, username } = jwtDecode(data.token);
       localStorage.setItem("token", data.token);
 
-      correctAction(`Welcome to our page ${username}`);
+      correctAction(`Welcome ${username}`);
       dispatch(loginActionCreator({ id, username }));
 
       toast.update(loginToast, {
