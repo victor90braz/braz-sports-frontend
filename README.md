@@ -22,13 +22,13 @@ The idea of this application is to allow the organizer to publish their own even
 For each event you can Delete, Create and Update their publications (CRUD).
 <br/>
 
-## About the Application
+## This Application is:
 
 - Simple Web Application
 - RESTful API
 - CRUD
 
-<br><br>
+<br>
 
 ## Technologies
 
