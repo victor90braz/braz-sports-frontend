@@ -26,7 +26,7 @@ For each event you can Delete, Create and Update their publications (CRUD).
 
 ## BrazSports is a CRUD application
 
-## Front:
+## Frontend:
 - Simple Web Application
 
 ## Backend:
