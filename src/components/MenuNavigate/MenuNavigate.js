@@ -6,7 +6,7 @@ const MenuNavigate = () => {
   return (
     <MenuNavigateStyle>
       <nav className="nav-logo">
-        <NavLink to="/home">SPORTSBRAZ</NavLink>
+        <NavLink to="/home">BRAZSPORTS</NavLink>
       </nav>
       <LogOut />
     </MenuNavigateStyle>
