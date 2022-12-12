@@ -15,7 +15,9 @@
 
 Braz Sports is an open space for those who want to enjoy friendlies games around the city.
 <br>
-The application has a map library (Leaflet). It will allow the users to find quickly. Focusing on the best UX.
+The application has a map library (Leaflet). It will allow the users to find each other quickly. 
+<br>
+Focusing on the best UX! Giving feedbacks for each interaction. 
 <br>
 The idea of this application is to allow the organizer to publish their own events.
 <br>
