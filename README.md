@@ -22,13 +22,17 @@ The idea of this application is to allow the organizer to publish their own even
 For each event you can Delete, Create and Update their publications (CRUD).
 <br/>
 
-## This application is a:
+✨ Things to know
 
+## BrazSports is a CRUD application
+
+## Front:
 - Simple Web Application
-- RESTful API
-- CRUD
 
-<br>
+## Backend:
+- RESTful API
+- MondoDB
+
 
 ## Technologies
 
