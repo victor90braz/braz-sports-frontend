@@ -33,7 +33,6 @@ For each event you can Delete, Create and Update their publications (CRUD).
 - RESTful API
 - MondoDB
 
-
 ## Technologies
 
 - [React](https://reactjs.org/)
@@ -48,8 +47,6 @@ For each event you can Delete, Create and Update their publications (CRUD).
 - [MongoDB](https://www.mongodb.com)
 - [JWT](https://jwt.io)
 - [Jest](https://jestjs.io)
-
-<br>
 
 ## Back endpoints <br><br>
 
