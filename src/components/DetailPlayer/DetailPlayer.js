@@ -18,6 +18,10 @@ const DetailPlayer = () => {
 
   const { id } = useParams();
   const { player: allPlayers } = useSelector((state) => state.player);
+  const { logged } = useSelector((state) => state.user);
+  const { username } = useSelector((state) => state.user);
+
+  const userAdmin = allPlayers.username;
 
   useEffect(() => {
     dispatch(getPlayerThunk(id));
@@ -42,9 +46,11 @@ const DetailPlayer = () => {
             <img src={allPlayers.image} alt="user" />
             <h5>{allPlayers.name}</h5>
           </div>
-          <span onClick={handleEdit}>
-            <FiEdit size={30} className="icon_edit" />
-          </span>
+          {logged && username === userAdmin && (
+            <span onClick={handleEdit}>
+              <FiEdit size={30} className="icon_edit" />
+            </span>
+          )}
         </div>
         <div className="card-body">
           <span className="tag tag-teal">{allPlayers.sport}</span>

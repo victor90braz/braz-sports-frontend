@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 import {
   createPlayerActionCreator,
   deletePlayerActionCreator,
@@ -8,6 +9,11 @@ import {
 } from "../features/playerSlice";
 
 const url = process.env.REACT_APP_API_URL;
+
+const getAuthHeader = () => {
+  const token = localStorage.getItem("token");
+  return { headers: { Authorization: `Bearer ${token}` } };
+};
 
 export const loadPlayersThunk = () => async (dispatch) => {
   const { data } = await axios.get(`${url}players/`);
@@ -24,19 +30,20 @@ export const getPlayerThunk = (idPlayer) => async (dispatch) => {
 };
 
 export const deletePlayerThunk = (id) => async (dispatch) => {
-  const token = localStorage.getItem("token");
+  const deleteToast = toast.loading("Deleting...", { isLoading: true });
 
-  const { status } = await axios.delete(
-    `${process.env.REACT_APP_API_URL}players/${id}`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  try {
+    const route = `${process.env.REACT_APP_API_URL}players/${id}`;
+    await axios.delete(route, getAuthHeader());
 
-  if (status === 200) {
+    toast.update(deleteToast, {
+      isLoading: false,
+      autoClose: 100,
+    });
+
     dispatch(deletePlayerActionCreator(id));
+  } catch (error) {
+    toast.error("Event couldn't be removed, try again later");
   }
 };
 

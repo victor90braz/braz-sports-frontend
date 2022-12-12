@@ -59,6 +59,7 @@ const PlayerCard = ({
             </div>
           </div>
         </section>
+
         <div className="card-action">
           <RiDeleteBin6Fill
             size={30}
