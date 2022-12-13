@@ -11,41 +11,36 @@ const EditPlayerPerfil = () => {
   const navigate = useNavigate();
 
   const { player } = useSelector((state) => state.player);
+  const [formData, setFormData] = useState(player);
 
-  const [valuePlayer, setFormEditPlayer] = useState(player);
-
-  const editPlayerData = (event) => {
-    setFormEditPlayer({
-      ...valuePlayer,
+  const changeFormDataValue = (event) => {
+    setFormData({
+      ...formData,
       [event.target.id]: event.target.value,
     });
   };
 
-  const submitEdit = (event) => {
+  const updateFormDataId = formData.id;
+  const updateFormData = {
+    image: formData.image,
+    name: formData.name,
+    level: formData.level,
+    email: formData.email,
+    contactNumber: formData.contactNumber,
+  };
+
+  const editForm = (event) => {
     event.preventDefault();
 
-    if (player) {
-      dispatch(
-        editPlayerThunk(valuePlayer.id, {
-          image: valuePlayer.image,
-          name: valuePlayer.name,
-          level: valuePlayer.level,
-          email: valuePlayer.email,
-          contactNumber: valuePlayer.contactNumber,
-        })
-      );
-
-      correctAction(
-        `Perfil of ${valuePlayer.username} has been edited successfully`
-      );
-      navigate("/home");
-    }
+    dispatch(editPlayerThunk(updateFormDataId, updateFormData));
+    correctAction(`${formData.name} edited`);
+    navigate(`/perfil/${formData.id}`);
   };
 
   return (
     <EditPlayerPerfilStyle>
       <div className="container">
-        <form autoComplete="off" noValidate onSubmit={submitEdit}>
+        <form autoComplete="off" noValidate onSubmit={editForm}>
           <fieldset>
             <legend>Edit Player Perfil</legend>
             <div className="mb-3">
@@ -56,8 +51,8 @@ const EditPlayerPerfil = () => {
                 className="form-control"
                 id="image"
                 rows="3"
-                value={valuePlayer.image}
-                onChange={editPlayerData}
+                value={formData.image}
+                onChange={changeFormDataValue}
               />
             </div>
 
@@ -70,8 +65,8 @@ const EditPlayerPerfil = () => {
                 className="form-control"
                 id="name"
                 rows="3"
-                value={valuePlayer.name}
-                onChange={editPlayerData}
+                value={formData.name}
+                onChange={changeFormDataValue}
               />
             </div>
 
@@ -83,8 +78,8 @@ const EditPlayerPerfil = () => {
                 type="text"
                 className="form-control"
                 id="level"
-                value={valuePlayer.level}
-                onChange={editPlayerData}
+                value={formData.level}
+                onChange={changeFormDataValue}
               />
             </div>
 
@@ -96,8 +91,8 @@ const EditPlayerPerfil = () => {
                 type="text"
                 className="form-control"
                 id="email"
-                value={valuePlayer.email}
-                onChange={editPlayerData}
+                value={formData.email}
+                onChange={changeFormDataValue}
               />
             </div>
 
@@ -109,8 +104,8 @@ const EditPlayerPerfil = () => {
                 type="text"
                 className="form-control"
                 id="contactNumber"
-                value={valuePlayer.contactNumber}
-                onChange={editPlayerData}
+                value={formData.contactNumber}
+                onChange={changeFormDataValue}
               />
             </div>
 

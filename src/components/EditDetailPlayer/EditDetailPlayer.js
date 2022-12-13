@@ -11,44 +11,41 @@ const EditDetailPlayer = () => {
   const navigate = useNavigate();
 
   const { player } = useSelector((state) => state.player);
+  const [formData, setFormData] = useState(player);
 
-  const [valuePlayer, setFormEditPlayer] = useState(player);
-
-  const editPlayerData = (event) => {
-    setFormEditPlayer({
-      ...valuePlayer,
+  const changeFormDataValue = (event) => {
+    setFormData({
+      ...formData,
       [event.target.id]: event.target.value,
     });
   };
 
-  const submitEdit = (event) => {
+  const updateFormDataId = formData.id;
+  const updateFormData = {
+    image: formData.image,
+    name: formData.name,
+    sport: formData.sport,
+    descriptionEvent: formData.descriptionEvent,
+    dateEvent: formData.dateEvent,
+    timeEvent: formData.timeEvent,
+    linkLocation: formData.linkLocation,
+    locationEvent: formData.locationEvent,
+    latitude: formData.latitude,
+    longitude: formData.longitude,
+  };
+
+  const editForm = (event) => {
     event.preventDefault();
 
-    if (player) {
-      dispatch(
-        editPlayerThunk(valuePlayer.id, {
-          image: valuePlayer.image,
-          name: valuePlayer.name,
-          sport: valuePlayer.sport,
-          descriptionEvent: valuePlayer.descriptionEvent,
-          dateEvent: valuePlayer.dateEvent,
-          timeEvent: valuePlayer.timeEvent,
-          linkLocation: valuePlayer.linkLocation,
-          locationEvent: valuePlayer.locationEvent,
-          latitude: valuePlayer.latitude,
-          longitude: valuePlayer.longitude,
-        })
-      );
-
-      correctAction(`${valuePlayer.username} has been edited successfully`);
-      navigate("/home");
-    }
+    dispatch(editPlayerThunk(updateFormDataId, updateFormData));
+    correctAction(`${formData.username} edited`);
+    navigate(`/detail`);
   };
 
   return (
     <EditDetailPlayerStyle>
       <div className="container">
-        <form autoComplete="off" noValidate onSubmit={submitEdit}>
+        <form autoComplete="off" noValidate onSubmit={editForm}>
           <fieldset>
             <legend>Edit Detail Player</legend>
 
@@ -59,8 +56,8 @@ const EditDetailPlayer = () => {
               <input
                 className="form-control"
                 id="image"
-                value={valuePlayer.image}
-                onChange={editPlayerData}
+                value={formData.image}
+                onChange={changeFormDataValue}
               />
             </div>
 
@@ -72,8 +69,8 @@ const EditDetailPlayer = () => {
                 type="text"
                 className="form-control"
                 id="name"
-                value={valuePlayer.name}
-                onChange={editPlayerData}
+                value={formData.name}
+                onChange={changeFormDataValue}
               />
             </div>
 
@@ -85,8 +82,8 @@ const EditDetailPlayer = () => {
                 type="text"
                 className="form-control"
                 id="sport"
-                value={valuePlayer.sport}
-                onChange={editPlayerData}
+                value={formData.sport}
+                onChange={changeFormDataValue}
               />
             </div>
 
@@ -98,8 +95,8 @@ const EditDetailPlayer = () => {
                 type="text"
                 className="form-control"
                 id="descriptionEvent"
-                value={valuePlayer.descriptionEvent}
-                onChange={editPlayerData}
+                value={formData.descriptionEvent}
+                onChange={changeFormDataValue}
               />
             </div>
 
@@ -111,8 +108,8 @@ const EditDetailPlayer = () => {
                 type="date"
                 className="form-control"
                 id="dateEvent"
-                value={valuePlayer.dateEvent}
-                onChange={editPlayerData}
+                value={formData.dateEvent}
+                onChange={changeFormDataValue}
               />
             </div>
 
@@ -124,8 +121,8 @@ const EditDetailPlayer = () => {
                 type="time"
                 className="form-control"
                 id="timeEvent"
-                value={valuePlayer.timeEvent}
-                onChange={editPlayerData}
+                value={formData.timeEvent}
+                onChange={changeFormDataValue}
               />
             </div>
 
@@ -137,8 +134,8 @@ const EditDetailPlayer = () => {
                 type="text"
                 className="form-control"
                 id="linkLocation"
-                value={valuePlayer.linkLocation}
-                onChange={editPlayerData}
+                value={formData.linkLocation}
+                onChange={changeFormDataValue}
                 placeholder="https://goo.gl/maps/WWvfVSc3geyeW1eu7"
               />
             </div>
@@ -151,8 +148,8 @@ const EditDetailPlayer = () => {
                 type="text"
                 className="form-control"
                 id="locationEvent"
-                value={valuePlayer.locationEvent}
-                onChange={editPlayerData}
+                value={formData.locationEvent}
+                onChange={changeFormDataValue}
               />
             </div>
 
@@ -164,8 +161,8 @@ const EditDetailPlayer = () => {
                 type="text"
                 className="form-control"
                 id="latitude"
-                value={valuePlayer.latitude}
-                onChange={editPlayerData}
+                value={formData.latitude}
+                onChange={changeFormDataValue}
               />
             </div>
 
@@ -177,8 +174,8 @@ const EditDetailPlayer = () => {
                 type="text"
                 className="form-control"
                 id="longitude"
-                value={valuePlayer.longitude}
-                onChange={editPlayerData}
+                value={formData.longitude}
+                onChange={changeFormDataValue}
               />
             </div>
 

@@ -11,39 +11,36 @@ const EditPlayer = () => {
   const navigate = useNavigate();
 
   const { player } = useSelector((state) => state.player);
+  const [formData, setFormData] = useState(player);
 
-  const [valuePlayer, setFormEditPlayer] = useState(player);
-
-  const editPlayerData = (event) => {
-    setFormEditPlayer({
-      ...valuePlayer,
+  const changeFormDataValue = (event) => {
+    setFormData({
+      ...formData,
       [event.target.id]: event.target.value,
     });
   };
 
-  const submitEdit = (event) => {
+  const updateFormDataId = formData.id;
+  const updateFormData = {
+    sport: formData.sport,
+    descriptionEvent: formData.descriptionEvent,
+    dateEvent: formData.dateEvent,
+    image: formData.image,
+    username: formData.username,
+  };
+
+  const editForm = (event) => {
     event.preventDefault();
 
-    if (player) {
-      dispatch(
-        editPlayerThunk(valuePlayer.id, {
-          sport: valuePlayer.sport,
-          descriptionEvent: valuePlayer.descriptionEvent,
-          dateEvent: valuePlayer.dateEvent,
-          image: valuePlayer.image,
-          username: valuePlayer.username,
-        })
-      );
-
-      correctAction(`${valuePlayer.username} has been edited successfully`);
-      navigate("/home");
-    }
+    dispatch(editPlayerThunk(updateFormDataId, updateFormData));
+    correctAction(`${formData.username} edited`);
+    navigate(`/home`);
   };
 
   return (
     <EditPlayerStyle>
       <div className="container">
-        <form autoComplete="off" noValidate onSubmit={submitEdit}>
+        <form autoComplete="off" noValidate onSubmit={editForm}>
           <fieldset>
             <legend>Edit Player Card</legend>
 
@@ -55,8 +52,8 @@ const EditPlayer = () => {
                 className="form-control"
                 id="sport"
                 rows="3"
-                value={valuePlayer.sport}
-                onChange={editPlayerData}
+                value={formData.sport}
+                onChange={changeFormDataValue}
               />
             </div>
 
@@ -68,8 +65,8 @@ const EditPlayer = () => {
                 className="form-control"
                 id="descriptionEvent"
                 rows="3"
-                value={valuePlayer.descriptionEvent}
-                onChange={editPlayerData}
+                value={formData.descriptionEvent}
+                onChange={changeFormDataValue}
               />
             </div>
 
@@ -82,8 +79,8 @@ const EditPlayer = () => {
                 className="form-control"
                 id="dateEvent"
                 rows="3"
-                value={valuePlayer.dateEvent}
-                onChange={editPlayerData}
+                value={formData.dateEvent}
+                onChange={changeFormDataValue}
               />
             </div>
 
@@ -95,8 +92,8 @@ const EditPlayer = () => {
                 type="url"
                 className="form-control"
                 id="image"
-                value={valuePlayer.image}
-                onChange={editPlayerData}
+                value={formData.image}
+                onChange={changeFormDataValue}
               />
             </div>
 
@@ -108,8 +105,8 @@ const EditPlayer = () => {
                 type="text"
                 className="form-control"
                 id="username"
-                value={valuePlayer.username}
-                onChange={editPlayerData}
+                value={formData.username}
+                onChange={changeFormDataValue}
               />
             </div>
 

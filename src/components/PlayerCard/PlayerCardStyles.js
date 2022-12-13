@@ -38,6 +38,7 @@ const PlayerCardStyles = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
   }
 
   .card-body {
@@ -83,6 +84,10 @@ const PlayerCardStyles = styled.div`
     font-size: 2rem;
     color: #f01c1c;
     cursor: pointer;
+  }
+
+  .icon_edit {
+    color: #fff;
   }
 
   .icon_edit:hover {
