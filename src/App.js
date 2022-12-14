@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import jwtDecode from "jwt-decode";
 import { loginActionCreator } from "./redux/features/userSlice";
-import EditPage from "./pages/EditPage/EditPage";
 import DetailPlayer from "./components/DetailPlayer/DetailPlayer";
 import LoginForm from "./components/LoginForm/LoginForm";
 import MenuNavigate from "./components/MenuNavigate/MenuNavigate";
@@ -52,15 +51,6 @@ function App() {
           element={
             <AccessControl>
               <CreatePlayer />
-            </AccessControl>
-          }
-        />
-
-        <Route
-          path="/edit/:playerId"
-          element={
-            <AccessControl>
-              <EditPage />
             </AccessControl>
           }
         />

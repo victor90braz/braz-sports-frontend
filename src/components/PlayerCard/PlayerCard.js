@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { deletePlayerThunk } from "../../redux/thunks/playersThunks";
 import PlayerCardStyles from "./PlayerCardStyles";
 import { RiDeleteBin6Fill } from "react-icons/ri";
-import { FiEdit } from "react-icons/fi";
 import { BsCalendarDate } from "react-icons/bs";
 
 const PlayerCard = ({
@@ -54,9 +53,6 @@ const PlayerCard = ({
             onClick={handleDelete}
             className="icon_delete"
           />
-          <NavLink to={`/edit/${id}`}>
-            <FiEdit size={30} className="icon_edit" />
-          </NavLink>
         </div>
       </div>
     </PlayerCardStyles>

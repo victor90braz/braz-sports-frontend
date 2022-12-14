@@ -27,6 +27,10 @@ const EditPlayerPerfil = () => {
     level: formData.level,
     email: formData.email,
     contactNumber: formData.contactNumber,
+    sport: formData.sport,
+    descriptionEvent: formData.descriptionEvent,
+    dateEvent: formData.dateEvent,
+    username: formData.username,
   };
 
   const editForm = (event) => {
@@ -41,8 +45,8 @@ const EditPlayerPerfil = () => {
     <EditPlayerPerfilStyle>
       <div className="container">
         <form autoComplete="off" noValidate onSubmit={editForm}>
-          <fieldset>
-            <legend>Edit Player Perfil</legend>
+          <section>
+            <h2>Perfil Organizer</h2>
             <div className="mb-3">
               <label htmlFor="image" className="form-label">
                 Image Url
@@ -108,11 +112,68 @@ const EditPlayerPerfil = () => {
                 onChange={changeFormDataValue}
               />
             </div>
+          </section>
 
-            <button type="submit" className="btn">
-              Set Player Perfil
-            </button>
-          </fieldset>
+          <section>
+            <h2>Card Event</h2>
+
+            <div className="mb-3">
+              <label htmlFor="sport" className="form-label">
+                Sport
+              </label>
+              <input
+                className="form-control"
+                id="sport"
+                rows="3"
+                value={formData.sport}
+                onChange={changeFormDataValue}
+              />
+            </div>
+
+            <div className="mb-3">
+              <label htmlFor="descriptionEvent" className="form-label">
+                Title Description
+              </label>
+              <input
+                className="form-control"
+                id="descriptionEvent"
+                rows="3"
+                value={formData.descriptionEvent}
+                onChange={changeFormDataValue}
+              />
+            </div>
+
+            <div className="mb-3">
+              <label htmlFor="dateEvent" className="form-label">
+                Date
+              </label>
+              <input
+                type={"date"}
+                className="form-control"
+                id="dateEvent"
+                rows="3"
+                value={formData.dateEvent}
+                onChange={changeFormDataValue}
+              />
+            </div>
+
+            <div className="mb-3">
+              <label htmlFor="username" className="form-label">
+                Username
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="username"
+                value={formData.username}
+                onChange={changeFormDataValue}
+              />
+            </div>
+          </section>
+
+          <button type="submit" className="btn">
+            Update Data
+          </button>
         </form>
       </div>
     </EditPlayerPerfilStyle>

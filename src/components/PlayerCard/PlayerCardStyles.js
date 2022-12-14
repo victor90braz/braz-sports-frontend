@@ -85,16 +85,6 @@ const PlayerCardStyles = styled.div`
     color: #f01c1c;
     cursor: pointer;
   }
-
-  .icon_edit {
-    color: #fff;
-  }
-
-  .icon_edit:hover {
-    font-size: 2rem;
-    color: #4cda4c;
-    cursor: pointer;
-  }
 `;
 
 export default PlayerCardStyles;

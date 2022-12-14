@@ -39,7 +39,7 @@ const Perfil = () => {
               EVENT DETAIL
             </NavLink>
             <NavLink to={`/editPerfil/${id}`} className="btn draw-border">
-              EDIT PERFIL
+              EDIT EVENT
             </NavLink>
             <NavLink to={`/create`} className="btn draw-border">
               CREATE A NEW EVENT
