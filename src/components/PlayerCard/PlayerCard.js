@@ -53,6 +53,9 @@ const PlayerCard = ({
             onClick={handleDelete}
             className="icon_delete"
           />
+          <NavLink to={`/gameEdit/${id}`} className="btn draw-border">
+            EDIT GAME
+          </NavLink>
         </div>
       </div>
     </PlayerCardStyles>

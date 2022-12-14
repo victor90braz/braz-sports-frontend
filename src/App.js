@@ -16,6 +16,7 @@ import ListPlayers from "./components/ListPlayers/ListPlayers";
 import AppStyle from "./AppStyle";
 import EditPlayerPerfil from "./components/EditPlayerPerfil/EditPlayerPerfil";
 import EditDetailPlayer from "./components/EditDetailPlayer/EditDetailPlayer";
+import GameEdit from "./components/GameEdit/GameEdit";
 
 function App() {
   const { logged } = useSelector((state) => state.user);
@@ -46,11 +47,48 @@ function App() {
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />
+
+        <Route
+          path="/home"
+          element={
+            <AccessControl>
+              <ListPlayers />
+            </AccessControl>
+          }
+        />
+
+        <Route
+          path="/perfil/:id"
+          element={
+            <AccessControl>
+              <Perfil />
+            </AccessControl>
+          }
+        />
+
+        <Route
+          path="/detail/:id"
+          element={
+            <AccessControl>
+              <DetailPlayer />
+            </AccessControl>
+          }
+        />
+
         <Route
           path="/create"
           element={
             <AccessControl>
               <CreatePlayer />
+            </AccessControl>
+          }
+        />
+
+        <Route
+          path="/gameEdit/:playerId"
+          element={
+            <AccessControl>
+              <GameEdit />
             </AccessControl>
           }
         />
@@ -69,33 +107,6 @@ function App() {
           element={
             <AccessControl>
               <EditDetailPlayer />
-            </AccessControl>
-          }
-        />
-
-        <Route
-          path="/detail/:id"
-          element={
-            <AccessControl>
-              <DetailPlayer />
-            </AccessControl>
-          }
-        />
-
-        <Route
-          path="/perfil/:id"
-          element={
-            <AccessControl>
-              <Perfil />
-            </AccessControl>
-          }
-        />
-
-        <Route
-          path="/home"
-          element={
-            <AccessControl>
-              <ListPlayers />
             </AccessControl>
           }
         />
