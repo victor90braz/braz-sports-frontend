@@ -10,7 +10,7 @@ const ListPlayers = () => {
 
   useEffect(() => {
     dispatch(loadPlayersThunk());
-  });
+  }, [dispatch]);
 
   return (
     <ListPlayersStyles>
