@@ -1,23 +1,23 @@
 import React from "react";
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { correctAction } from "../../modals/modals";
-import { editPlayerThunk } from "../../redux/thunks/playersThunks";
+import {
+  editPlayerThunk,
+  getPlayerThunk,
+} from "../../redux/thunks/playersThunks";
 import EditPlayerStyle from "./EditPlayerStyle";
 
 const EditPlayer = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { player } = useSelector((state) => state.player);
-  const [formData, setFormData] = useState(player);
+  const { player: formData } = useSelector((state) => state.player);
 
   const changeFormDataValue = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.id]: event.target.value,
-    });
+    dispatch(
+      getPlayerThunk({ ...formData, [event.target.id]: event.target.value })
+    );
   };
 
   const updateFormDataId = formData.id;
@@ -34,6 +34,7 @@ const EditPlayer = () => {
 
     dispatch(editPlayerThunk(updateFormDataId, updateFormData));
     correctAction(`${formData.username} edited`);
+
     navigate(`/home`);
   };
 
