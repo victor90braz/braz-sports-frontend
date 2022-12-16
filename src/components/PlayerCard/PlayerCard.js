@@ -4,7 +4,6 @@ import { deletePlayerThunk } from "../../redux/thunks/playersThunks";
 import PlayerCardStyles from "./PlayerCardStyles";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { BsCalendarDate } from "react-icons/bs";
-import Search from "../Search/Search";
 
 const PlayerCard = ({
   player: { id, sport, descriptionEvent, dateEvent, image, username },
@@ -19,10 +18,6 @@ const PlayerCard = ({
   return (
     <PlayerCardStyles>
       <div className="container">
-        <div>
-          <Search />
-        </div>
-
         <NavLink to={`/perfil/${id}`} style={{ textDecoration: "none" }}>
           <section className="wrapper">
             <div className="card-body">

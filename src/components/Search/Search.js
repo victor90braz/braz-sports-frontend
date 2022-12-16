@@ -31,7 +31,7 @@ const Search = () => {
     <SearchStyle>
       <input
         type="text"
-        placeholder="Search..."
+        placeholder="Organizer"
         value={search}
         onChange={handleSearch}
       />
