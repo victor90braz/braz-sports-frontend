@@ -2,12 +2,14 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { NavLink, useParams } from "react-router-dom";
 
 import SearchStyle from "./SearchStyle";
 
 const Search = () => {
   const [apis, setApis] = useState([]);
   const [search, setSearch] = useState("");
+  const { id } = useParams();
 
   useEffect(() => {
     (async () => {
@@ -39,7 +41,16 @@ const Search = () => {
       {search.length > 0 ? (
         <ul>
           {filteredApis.map((data) => {
-            return <li key={data.username}>{data.username}</li>;
+            return (
+              <li key={data.username}>
+                <NavLink
+                  to={`/perfil/${id}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  {data.username}
+                </NavLink>
+              </li>
+            );
           })}
         </ul>
       ) : (
