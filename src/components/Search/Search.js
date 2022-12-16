@@ -8,7 +8,8 @@ import SearchStyle from "./SearchStyle";
 const Search = () => {
   const [apis, setApis] = useState([]);
   const [search, setSearch] = useState("");
-  const [filterApis, setFilterApis] = useState([]);
+
+  console.log("Rendered");
 
   useEffect(() => {
     (async () => {
@@ -19,11 +20,10 @@ const Search = () => {
     })();
   }, []);
 
-  useEffect(() => {
-    (() => {
-      setFilterApis(apis.filter((api) => api.username.includes(search)));
-    })();
-  }, [apis, search]);
+  const filteredApis =
+    search.length > 0
+      ? apis.filter((api) => api.username.includes(search))
+      : [];
 
   const handleSearch = (event) => {
     return setSearch(event.target.value);
@@ -40,7 +40,7 @@ const Search = () => {
 
       {search.length > 0 ? (
         <ul>
-          {filterApis.map((data) => {
+          {filteredApis.map((data) => {
             return <li key={data.username}>{data.username}</li>;
           })}
         </ul>
