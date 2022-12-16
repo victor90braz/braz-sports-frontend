@@ -9,8 +9,6 @@ const Search = () => {
   const [apis, setApis] = useState([]);
   const [search, setSearch] = useState("");
 
-  console.log("Rendered");
-
   useEffect(() => {
     (async () => {
       const { data } = await axios.get(
