@@ -6,26 +6,51 @@ import { useEffect } from "react";
 import SearchStyle from "./SearchStyle";
 
 const Search = () => {
-  const [api, setApi] = useState([]);
+  const [apis, setApis] = useState([]);
+  const [search, setSearch] = useState("");
+  const [filterApis, setFilterApis] = useState([]);
 
   useEffect(() => {
     (async () => {
       const { data } = await axios.get(
         "https://braz-sports-backend.onrender.com/players"
       );
-      console.log(setApi(data));
+      setApis(data);
     })();
   }, []);
 
+  useEffect(() => {
+    (() => {
+      setFilterApis(apis.filter((api) => api.username.includes(search)));
+    })();
+  }, [apis, search]);
+
+  const handleSearch = (event) => {
+    return setSearch(event.target.value);
+  };
+
   return (
     <SearchStyle>
-      <input type="text" placeholder="Search..." />
+      <input
+        type="text"
+        placeholder="Search..."
+        value={search}
+        onChange={handleSearch}
+      />
 
-      <ul>
-        {api.map((data) => {
-          return <li key={data}>{data.name}</li>;
-        })}
-      </ul>
+      {search.length > 0 ? (
+        <ul>
+          {filterApis.map((data) => {
+            return <li key={data.username}>{data.username}</li>;
+          })}
+        </ul>
+      ) : (
+        <ul>
+          {apis.map((data) => {
+            return <li key={data.username}>{data.username}</li>;
+          })}
+        </ul>
+      )}
     </SearchStyle>
   );
 };
