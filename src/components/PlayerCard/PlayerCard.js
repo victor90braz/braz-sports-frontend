@@ -4,6 +4,7 @@ import { deletePlayerThunk } from "../../redux/thunks/playersThunks";
 import PlayerCardStyles from "./PlayerCardStyles";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { BsCalendarDate } from "react-icons/bs";
+import { CiEdit } from "react-icons/ci";
 
 const PlayerCard = ({
   player: { id, sport, descriptionEvent, dateEvent, image, username },
@@ -54,7 +55,7 @@ const PlayerCard = ({
             className="icon_delete"
           />
           <NavLink to={`/gameEdit/${id}`} className="btn draw-border">
-            EDIT GAME
+            <CiEdit size={35} className="icon_edit" />
           </NavLink>
         </div>
       </div>

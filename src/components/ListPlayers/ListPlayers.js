@@ -23,7 +23,7 @@ const ListPlayers = () => {
 
   return (
     <ListPlayersStyles>
-      <div className="container-players">
+      <div className="container-info">
         <button onClick={handleList} className="btn btn-info">
           Search...
         </button>
@@ -31,7 +31,9 @@ const ListPlayers = () => {
         <div id="infoList">
           <Search />
         </div>
+      </div>
 
+      <div className="container-players">
         {allPlayers.map((player, keyPlayer) => (
           <PlayerCard player={player} key={keyPlayer} />
         ))}

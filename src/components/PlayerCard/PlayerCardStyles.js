@@ -77,12 +77,21 @@ const PlayerCardStyles = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     gap: 5px;
   }
 
   .icon_delete:hover {
-    font-size: 2rem;
     color: #f01c1c;
+    cursor: pointer;
+  }
+
+  .icon_edit {
+    color: white;
+  }
+
+  .icon_edit:hover {
+    color: green;
     cursor: pointer;
   }
 `;

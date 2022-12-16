@@ -11,6 +11,13 @@ const ListPlayersStyles = styled.div`
     #infoList {
       display: none;
     }
+
+    .container-info {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+    }
   }
 `;
 
