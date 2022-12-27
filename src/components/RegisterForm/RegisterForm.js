@@ -50,7 +50,7 @@ const RegisterForm = () => {
 
         <form autoComplete="off" noValidate onSubmit={handleSubmit}>
           <div className="inputs">
-            <label htmlFor="username">* NAME</label>
+            <label htmlFor="name">* NAME</label>
             <input
               type="text"
               id="name"

@@ -83,6 +83,31 @@ const DetailPlayerStyle = styled.div`
     }
   }
 
+  .card-action {
+    color: white;
+    border: none;
+    background: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .icon_delete:hover {
+    color: #f01c1c;
+    cursor: pointer;
+  }
+
+  .icon_edit {
+    color: white;
+  }
+
+  .icon_edit:hover {
+    color: green;
+    cursor: pointer;
+  }
+
   @media (max-width: 600px) {
     .card {
       width: 90vw;

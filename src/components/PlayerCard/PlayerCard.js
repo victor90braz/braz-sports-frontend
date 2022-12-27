@@ -1,21 +1,10 @@
-import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { deletePlayerThunk } from "../../redux/thunks/playersThunks";
 import PlayerCardStyles from "./PlayerCardStyles";
-import { RiDeleteBin6Fill } from "react-icons/ri";
 import { BsCalendarDate } from "react-icons/bs";
-import { CiEdit } from "react-icons/ci";
 
 const PlayerCard = ({
   player: { id, sport, descriptionEvent, dateEvent, image, username },
 }) => {
-  const dispatch = useDispatch();
-
-  const handleDelete = () => {
-    const deleteCard = window.confirm("Are you sure to delete this card?");
-    if (deleteCard) dispatch(deletePlayerThunk(id));
-  };
-
   return (
     <PlayerCardStyles>
       <div className="container">
@@ -47,17 +36,6 @@ const PlayerCard = ({
             </div>
           </section>
         </NavLink>
-
-        <div className="card-action">
-          <RiDeleteBin6Fill
-            size={30}
-            onClick={handleDelete}
-            className="icon_delete"
-          />
-          <NavLink to={`/gameEdit/${id}`} className="btn draw-border">
-            <CiEdit size={35} className="icon_edit" />
-          </NavLink>
-        </div>
       </div>
     </PlayerCardStyles>
   );

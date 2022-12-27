@@ -11,13 +11,6 @@ const ListPlayersStyles = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     width: 80vw;
-
-    .container-info {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      align-items: center;
-    }
   }
 `;
 

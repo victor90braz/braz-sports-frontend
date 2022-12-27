@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import {
+  deletePlayerThunk,
   getPlayerThunk,
   loadPlayersThunk,
 } from "../../redux/thunks/playersThunks";
@@ -11,17 +12,14 @@ import { GoLocation } from "react-icons/go";
 import { BiTime } from "react-icons/bi";
 import { BsCalendarDate } from "react-icons/bs";
 import { FiEdit } from "react-icons/fi";
+import { RiDeleteBin6Fill } from "react-icons/ri";
+import { CiEdit } from "react-icons/ci";
 
 const DetailPlayer = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const { id } = useParams();
   const { player: allPlayers } = useSelector((state) => state.player);
-  const { logged } = useSelector((state) => state.user);
-  const { username } = useSelector((state) => state.user);
-
-  const userAdmin = allPlayers.username;
 
   useEffect(() => {
     dispatch(getPlayerThunk(id));
@@ -38,6 +36,11 @@ const DetailPlayer = () => {
     navigate(`/perfil/${id}`);
   };
 
+  const handleDelete = () => {
+    const deleteCard = window.confirm("Are you sure to delete this card?");
+    if (deleteCard) dispatch(deletePlayerThunk(id));
+  };
+
   return (
     <DetailPlayerStyle>
       <div className="card">
@@ -46,11 +49,23 @@ const DetailPlayer = () => {
             <img src={allPlayers.image} alt="user" />
             <h5>{allPlayers.name}</h5>
           </div>
-          {logged && username === userAdmin && (
-            <span onClick={handleEdit}>
-              <FiEdit size={30} className="icon_edit" />
-            </span>
-          )}
+
+          <span onClick={handleEdit}>
+            <FiEdit size={30} className="icon_edit" />
+            edit detail
+          </span>
+
+          <div className="card-action">
+            <RiDeleteBin6Fill
+              size={30}
+              onClick={handleDelete}
+              className="icon_delete"
+            />
+            <NavLink to={`/gameEdit/${id}`} className="btn draw-border">
+              <CiEdit size={35} className="icon_edit" />
+              Edit Card
+            </NavLink>
+          </div>
         </div>
         <div className="card-body">
           <span className="tag tag-teal">{allPlayers.sport}</span>
