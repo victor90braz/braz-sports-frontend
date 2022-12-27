@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   deletePlayerThunk,
   getPlayerThunk,
@@ -10,10 +10,9 @@ import GoogleMap from "../Map/Map";
 import DetailPlayerStyle from "./DetailPlayerStyle";
 import { GoLocation } from "react-icons/go";
 import { BiTime } from "react-icons/bi";
-import { BsCalendarDate } from "react-icons/bs";
-import { FiEdit } from "react-icons/fi";
-import { RiDeleteBin6Fill } from "react-icons/ri";
-import { CiEdit } from "react-icons/ci";
+import { BsCalendarDate, BsCreditCard2Front } from "react-icons/bs";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { TbListDetails } from "react-icons/tb";
 
 const DetailPlayer = () => {
   const dispatch = useDispatch();
@@ -36,6 +35,11 @@ const DetailPlayer = () => {
     navigate(`/perfil/${id}`);
   };
 
+  const handleCard = () => {
+    dispatch(getPlayerThunk(id));
+    navigate(`/gameEdit/${id}`);
+  };
+
   const handleDelete = () => {
     const deleteCard = window.confirm("Are you sure to delete this card?");
     if (deleteCard) dispatch(deletePlayerThunk(id));
@@ -50,23 +54,24 @@ const DetailPlayer = () => {
             <h5>{allPlayers.name}</h5>
           </div>
 
-          <span onClick={handleEdit}>
-            <FiEdit size={30} className="icon_edit" />
-            edit detail
-          </span>
+          <div className="container-actions">
+            <span onClick={handleEdit}>
+              <TbListDetails size={25} className="icon-detail-card" />
+              Set Detail Card
+            </span>
 
-          <div className="card-action">
-            <RiDeleteBin6Fill
-              size={30}
-              onClick={handleDelete}
-              className="icon_delete"
-            />
-            <NavLink to={`/gameEdit/${id}`} className="btn draw-border">
-              <CiEdit size={35} className="icon_edit" />
-              Edit Card
-            </NavLink>
+            <span onClick={handleDelete}>
+              <RiDeleteBin6Line size={25} className="icon-delete" /> Delete
+              Cards
+            </span>
+
+            <span onClick={handleCard}>
+              <BsCreditCard2Front size={25} className="icon-card" />
+              Set Card
+            </span>
           </div>
         </div>
+
         <div className="card-body">
           <span className="tag tag-teal">{allPlayers.sport}</span>
           <h4>{allPlayers.descriptionEvent}</h4>
@@ -82,14 +87,14 @@ const DetailPlayer = () => {
           </span>
 
           <span>
-            <a
+            <p
               href={allPlayers.linkLocation}
               target={"_blank"}
               rel="noreferrer"
             >
               <GoLocation size={25} />
               {allPlayers.locationEvent}
-            </a>
+            </p>
           </span>
         </div>
 

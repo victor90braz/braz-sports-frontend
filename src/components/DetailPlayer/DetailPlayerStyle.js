@@ -108,6 +108,40 @@ const DetailPlayerStyle = styled.div`
     cursor: pointer;
   }
 
+  #myDIV {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: lightblue;
+    margin-top: 20px;
+  }
+  .container-actions {
+    span {
+      display: flex;
+      gap: 20px;
+    }
+
+    span:hover {
+      cursor: pointer;
+
+      .icon-detail-card {
+        background-color: #cccccc;
+        border-radius: 15px;
+        padding: 5px;
+      }
+      .icon-delete {
+        background-color: red;
+        border-radius: 15px;
+        padding: 5px;
+      }
+      .icon-card {
+        background-color: yellow;
+        border-radius: 15px;
+        padding: 5px;
+      }
+    }
+  }
+
   @media (max-width: 600px) {
     .card {
       width: 90vw;
